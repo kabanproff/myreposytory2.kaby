@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>anketa_if</title>
+</head>
+<h1>hi</h1>
+
+<body>
+	<script>
+		let secondName = prompt('Ваша фамилия?', '');
+		let firstName = prompt('Ваша имя?', '');
+		let patronymicName = prompt('Ваше отчество', '');
+
+		let age = prompt('Ваш возраст в годах', '');
+		let gender = confirm('Ваш пол - мужской?');
+
+		let pol;
+		if (gender) {
+			pol = 'мужской';
+		} else {
+			pol = 'женский';
+		}
+		alert(`ваше ФИО: ${secondName} ${firstName} ${patronymicName}
+ваш возраст в годах: ${age}
+ваш возраст в днях: ${age * 365}
+через 5 лет вам будет: ${+age + 5}
+ваш пол: ${pol}`);
+	</script>
+</body>
+
+</html>

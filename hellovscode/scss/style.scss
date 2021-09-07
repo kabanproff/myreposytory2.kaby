@@ -1,0 +1,31 @@
+@import "_header";
+@mixin name {
+}
+body {
+	font-size: 20px;
+	line-height: 30px;
+	div {
+		font-size: 10px;
+	}
+	h1 {
+		color: blue;
+	}
+}
+.goodday {
+	&__item {
+	}
+
+	&__me {
+	}
+
+	&__me-- {
+	}
+}
+.goodday {
+}
+.goodday__item {
+}
+.goodday__me {
+}
+.goodday__me-- {
+}
