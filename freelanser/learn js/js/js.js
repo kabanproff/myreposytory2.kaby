@@ -90,4 +90,3 @@
 // console.log(obj3 === obj2);
 
 console.log('hi');
-console.log('hihi');
