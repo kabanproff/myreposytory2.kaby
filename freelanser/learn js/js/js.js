@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 // ќÃβᎯ₦pŔoff
 (function (msg) {
 	//isNan - ${isNaN(val)}  
@@ -7312,39 +7312,39 @@ let ddd;
 // 	return new Promise((rs, rj) => setTimeout(() => rs(result * 5), 2000))
 // }).then((val) => console.log(val));
 
-function loadScript(src) {
+// function loadScript(src) {
 
-	return new Promise((rs, rj) => {
-		let script = document.createElement('script');
-		script.src = src;
+// 	return new Promise((rs, rj) => {
+// 		let script = document.createElement('script');
+// 		script.src = src;
 
-		script.onload = () => rs(script);
-		script.onerror = () => rj(new Error('Скрипт не загрузился'));
-		document.body.append(script);
-		// console.log(script);
-	})
-}
+// 		script.onload = () => rs(script);
+// 		script.onerror = () => rj(new Error('Скрипт не загрузился'));
+// 		document.body.append(script);
+// 		// console.log(script);
+// 	})
+// }
 
-loadScript('js/blabla.js')
-	.then(s => loadScript('js/ddd.js'))
-	.then(s => {
-		// dddJs();
-		sayHaha();
+// loadScript('js/blabla.js')
+// 	.then(s => loadScript('js/ddd.js'))
+// 	.then(s => {
+// 		// dddJs();
+// 		sayHaha();
 
-	})
+// 	})
 
-class Thenable {
-	constructor(num) {
-		this.num = num;
-	}
-	then(rs, rj) {
-		setTimeout(() => rs(this.num * 5), 2000);
-	}
-}
+// class Thenable {
+// 	constructor(num) {
+// 		this.num = num;
+// 	}
+// 	then(rs, rj) {
+// 		setTimeout(() => rs(this.num * 5), 2000);
+// 	}
+// }
 
-new Promise(rs => rs(2))
-	.then(rs => new Thenable(rs))
-	.then((v) => console.log(v))
+// new Promise(rs => rs(2))
+// 	.then(rs => new Thenable(rs))
+// 	.then((v) => console.log(v))
 
 
 
@@ -7392,7 +7392,7 @@ new Promise(rs => rs(2))
 // 	document.body.append(img);
 
 // 	setTimeout(()=>img.remove(),3000);
-	
+
 
 // });
 
@@ -7413,32 +7413,2099 @@ new Promise(rs => rs(2))
 // }))
 // .then(gitUser=>console.log(`Закончили показ ${gitUser.name}`))
 
-function loadJson(url){
-	return fetch(url)
-	.then(response=> response.json());
-}
-function loadGitUser(name){
-	return fetch(`https://api.github.com/users/${name}`)
-	.then(response=>response.json())
-}
-function showAvatar(gitUser){
-	return new Promise((resolve,reject=>{
-		let img = document.createElement('img');
-		img.src = gitUser.avatar_url;
-		img.className = 'promise-avatar-example';
-		document.body.append(img);
+// function loadJson(url){
+// 	return fetch(url)
+// 	.then(response=> response.json());
+// }
+// function loadGitUser(name){
+// 	return fetch(`https://api.github.com/users/${name}`)
+// 	.then(response=>response.json())
+// }
+// function showAvatar(gitUser){
+// 	return new Promise((resolve,reject=>{
+// 		let img = document.createElement('img');
+// 		img.src = gitUser.avatar_url;
+// 		img.className = 'promise-avatar-example';
+// 		document.body.append(img);
 
-		setTimeout(()=>{
-			img.remove();
-			resolve(gitUser);
-		},3000);
-	}))
+// 		setTimeout(()=>{
+// 			img.remove();
+// 			resolve(gitUser);
+// 		},3000);
+// 	}))
 
-}
+// }
 
 // loadJson('user.json')
 // .then(user=>loadGitUser(user.name))
 // .then(showAvatar(gitUser))
 // .then(gitUser=>alert(`Показ завершён ${gitUser.name}`))
 
+
+// fetch('https://no-such-server.blabla')
+// .then(response=>response.json(),error=>console.log(error))
+// // .catch(error=>console.log(error))
+
+// fetch('user.json')
+// .then(response=>response.json())
+// .then(user=>fetch(`https://api.github.com/users/${user.name}`))
+// .then(response=>response.json())
+// .then(gitUser=>new Promise((resolve,reject)=>{
+// let img = document.createElement('img');
+// img.src = gitUser.avatar_url;
+// img.className = 'promise-avatar-example';
+// document.body.append(img);
+
+// setTimeout(()=>{
+// 	img.remove();
+// 	resolve(gitUser);
+
+// },3000)
+// }))
+// .catch(error=>console.log(error.messages))
+
+// console.log(new Promise((resolve,reject)=>{
+// 	throw new Error('Ошибка')
+// }));
+
+// new Promise((resolve,reject)=>{
+// 	resolve('ok');
+// })
+// .then((result)=>{
+// 	throw new Error('er');
+// })
+// .then((result)=>result + '3455')
+// .catch(e=>console.log(e))
+
+// new Promise((resolve,reject)=>{
+// 	throw new Error('Ошибка')
+
+// })
+// .catch(er=>alert(er))
+// .then(()=>console.log(`Управление перешло в зен`))
+
+// new Promise(function() {
+// 	noSuchFunction(); // Ошибка (нет такой функции)
+//  })
+// 	.then(() => {
+// 	  // обработчики .then, один или более
+// 	}); // без .catch в самом конце!
+
+// window.addEventListener('unhandledrejection',event=>{
+// 	alert(event.promise);
+// 	alert(event.reason);
+// 	console.log(event.promise);
+// 	console.log(event.reason);
+// });
+
+// new Promise(()=>{throw new Error('dgg')})
+
+
+// new Promise(function(resolve, reject) {
+// 	throw new Error('whoops')
+// 	setTimeout(() => {
+
+// 	//   throw new Error("Whoops!");
+// 	}, 0);
+//  }).catch(alert);
+
+// console.log(`request data ...`);
+
+// setTimeout(()=>{
+// 	console.log(`Preparing data...`);
+// const backend= {
+// 	server:'aws',
+// 	port:2000,
+// 	status: 'working'
+// }
+
+// setTimeout(()=>{
+// 	backend.modified = true;
+// 	console.log(`Data received`, backend);
+// },2000)
+
+// },2000);
+
+// let p = new Promise(resolve => {
+// 	setTimeout(() => {
+// 		console.log(`request data...`);
+// 		const backendData = {
+// 			server: 'aws',
+// 			port: 2000,
+// 			status: 'working'
+// 		}
+// 		resolve(backendData)
+// 	}, 3000)
+// });
+
+// // p.then((data)=>{
+// // 	console.log('promise resolved',data);
+// // })
+// p.then(data => {
+// 	return new Promise((resolve, reject) => {
+// 		setTimeout(() => {
+// 			data.modyfied = true;
+// 			reject(data)
+
+// 		}, 3000)
+// 	})
+
+// 		// .then((resolved) => {
+// 		// 	console.log(`promise reslved`, resolved);
+// 		// })
+
+// }).then(clientData=>{
+// 	clientData.modPromise = true;
+// 	// console.log(`Data recived`, clientData);
+// 	return clientData;
+// }).then(data=>{
+// 	console.log('Modyfied',data);
+// }).catch(e=>console.error('Error',e))
+// .finally(()=>console.log('finally'))
+
+// let sleep = ms=>{
+// 	return new Promise((resolve)=>{
+// 		setTimeout(()=>{
+// 			resolve()
+// 		},ms)
+// 	})
+// }
+
+// sleep(2000).then(()=> console.log(`After 2 cek`));
+// sleep(5000).then(()=> console.log(`After 5 cek`));
+
+// Promise.all([sleep(2000),sleep(4000)]).then(()=>console.log(`end`))
+// Promise.race([sleep(2000),sleep(4000)]).then(()=>console.log(`first`))
+
+
+// let urls = [
+// 	'https://api.github.com/users/kabanproff',
+// 	'https://api.github.com/users/remy',
+// 	'https://api.github.com/users/jeresig',
+
+// ];
+
+// let requests = urls.map(url=> fetch(url));
+// console.log(requests);
+// let data = new Date()
+// Promise.all(requests)
+// .then(responses=> responses.forEach(
+// 	respon=> {
+// 		console.log(`${respon.url}: ${respon.status} загрузился за ${(new Date - data)/1000 }cek`)
+// 	}
+// ))
+// function loadTime(user) {
+// 	return new Promise((resolve, reject) => {
+// 		let img = document.createElement('img');
+// 		img.src = user.avatar_url;
+// 		document.body.append(img);
+
+// 		setTimeout(() => {
+// 			img.remove()
+// 			resolve()
+// 		}, 3000);
+// 	})
+// }
+// function creatAndShow(user) {
+// 	let img = document.createElement('img');
+// 	img.src = user.avatar_url;
+// 	document.body.append(img);
+// 	setTimeout(() => {
+// 		img.remove()
+// 		i++;
+
+// 	}, 3000);
+// }
+// let data = new Date()
+// let names = ['iliakan', 'remy', 'jeresig', 'kabanproff'];
+// let requests = names.map(name => fetch(`https://api.github.com/users/${name}`))
+// console.log(requests);
+// Promise.all(requests)
+// 	.then(responses => {
+// 		for (let i of responses) {
+// 			console.log(`${i.url}: ${i.status} загрузился за ${(new Date - data) / 1000}cek`);
+// 		}
+// 		return responses;
+// 	})
+// 	.then(rs => Promise.all(rs.map(req => req.json())))
+// 	.then(users => {
+// 		loop(users)
+// let img = document.createElement('img');
+// img.src = user.avatar_url;
+// document.body.append(img);
+
+// setTimeout(() => {
+// 	img.remove()
+// 	i++;
+// 	resolve()
+// }, 3000);
+// })
+// }
+// 	})
+// function ss(i) {
+// 	new Promise(res => {
+// 		setTimeout(() => res(i), 2000)
+// 	})
+// 		.then(val => console.log(val))
+// }
+
+
+// let arr = [1, 2, 3]
+// function loop(arr) {
+// let i = 0;
+// 	function dd() {
+// 		let img = document.createElement('img');
+// 		img.src = arr[i].avatar_url;
+// 		img.className = 'create-img';
+// 		document.body.append(img);
+
+// 		if (++i < arr.length) {
+// 			setTimeout(() => {
+
+// 				dd();
+// 			}, 3000 * i);
+// 		}
+// 	}
+// 	dd();
+// }
+
+
+
+// let d = 0;
+
+// setTimeout(function tt()  {
+// 	console.log(d)
+// 	d++
+// 	if(d<10) setTimeout(tt,2000)
+// }, 2000)
+
+// let arr = ['Artyom', 'Dima', 'Kiril'];
+// let div = document.createElement('div');
+// div.style.textAlign = 'center';
+// div.style.fontSize = '40px';
+// document.body.append(div);
+
+// (function () {
+// 	let i = 0;
+// 	(function loop() {
+
+// 		div.innerHTML = arr[i];
+// 		if (++i < arr.length) {
+// 			setTimeout(	loop, 3000)
+// 		}
+// 	})();
+// })();
+
+
+
+// const person = new Object({
+// 	name: 'Maxim',
+// 	age: 25,
+// 	greet(){
+// 		console.log('Greet')
+// 	}
+// })
+
+// Object.prototype.sayHello = function(){
+// 	console.log("Hello")
+// }
+
+// const lena = Object.create(person)
+// lena.name = 'Lena';
+
+// let str = new String('I am string')
+// console.log(str)
+// console.log(typeof str)
+
+// let p = document.createElement('p');
+// p.innerHTML = str.italics().bold().repeat(5)
+// document.body.append(p);
+
+// function hello(){
+// 	console.log('Hello',this)
+// }
+// const person = {
+// 	name:'Artyom',
+// 	age:34,
+// 	sayHello:hello 
+// }
+
+// function urlGenerator(domain){
+// 	return function(url){
+// 		return `https://${url}.${domain}`;
+// 	}
+// }
+
+// const comUrl = urlGenerator('com');
+// const ruUrl = urlGenerator('ru');
+
+
+// console.log(comUrl('google'))
+// console.log(ruUrl('mail'))
+
+// const person1 = {
+// 	name: 'Михаил',
+// 	age: 22,
+// 	job: 'Frontend',
+// }
+
+// const person2 = {
+// 	name: 'Елена',
+// 	age: 19,
+// 	job: 'SMM',
+// }
+
+// function logPerson(){
+// 	console.log(`Person: ${this.name}, ${this.age}, ${this.job}`);
+
+// }
+// function bind(user,callback){
+
+// 	return function (...args){
+// 		callback.apply(user, args)
+// 	}
+// }
+
+// bind(person1, logPerson)()
+// bind(person2, logPerson)()
+
+// console.log('start');
+// console.log('start2');
+// function time2sec(){
+// 	console.log('timeout2sec')
+// }
+
+// setTimeout(()=>console.log('Inside timeout, after 5 sec'),5000)
+
+
+// setTimeout(time2sec,2000)
+
+// console.log(`end`)
+
+
+// console.log(`request data...`)
+
+// setTimeout(()=>{
+// 	console.log(`preparing data...`)
+
+// 	const backend =  {
+// 		server: 'aws',
+// 		port: 2000,
+// 		status: 'working',
+// 	}
+
+// 	setTimeout(()=>{
+// 		backend.modyfied = true
+// 		console.log(`data received`, backend)
+// 	},2000)
+// },2000)
+
+
+// let p = new Promise(function (resolve, reject) {
+// 	setTimeout(() => {
+// 		console.log(`preparing data...`)
+
+// 		const backend = {
+// 			server: 'aws',
+// 			port: 2000,
+// 			status: 'working',
+// 		}
+
+// 		resolve(backend)
+// 	}, 2000)
+// })
+
+// p.then((backend) => {
+// return new Promise((resolve)=>{
+// 	setTimeout(() => {
+// 		backend.modyfied = true
+// 		console.log(`data received`, backend)
+// 		resolve()
+// 	}, 2000)
+// })
+// })
+// .then(()=>console.log(`promise resolved`))
+
+
+// function loadTime(user) {
+// 	return new Promise((resolve, reject) => {
+// 		let img = document.createElement('img');
+// 		img.src = user.avatar_url;
+// 		document.body.append(img);
+
+// 		setTimeout(() => {
+// 			img.remove()
+// 			resolve()
+// 		}, 3000);
+// 	})
+// }
+// function creatAndShow(user) {
+// 	let img = document.createElement('img');
+// 	img.src = user.avatar_url;
+// 	document.body.append(img);
+// 	setTimeout(() => {
+// 		img.remove()
+// 		i++;
+
+// 	}, 3000);
+// }
+// let data = new Date()
+// let names = ['iliakan', 'remy', 'jeresig', 'kabanproff'];
+// let requests = names.map(name => fetch(`https://api.github.com/users/${name}`))
+// console.log(requests);
+// Promise.all(requests)
+// 	.then(responses => {
+// 		for (let i of responses) {
+// 			console.log(`${i.url}: ${i.status} загрузился за ${(new Date - data) / 1000}cek`);
+// 		}
+// 		return responses;
+// 	})
+// 	.then(rs => Promise.all(rs.map(req => req.json())))
+// 	.then(users => {
+// 		let i = 0;
+// 		new Promise(resolve=>{
+// 			let img = document.createElement('img');
+// 			img.src = users[i].avatar_url;
+// 			document.body.append(img);
+
+// 			setTimeout(() => {
+// 				img.remove()
+// 				++i;
+// 				resolve(users)
+// 			}, 3000);
+// 		})
+// 		.then(users=>{
+// 			new Promise(resolve=>{
+// 				let img = document.createElement('img');
+// 				img.src = users[i].avatar_url;
+// 				document.body.append(img);
+
+// 				setTimeout(() => {
+// 					img.remove()
+// 					++i;
+// 					resolve(users)
+// 				}, 3000);
+// 		})})
+// 		.then(users=>{
+// 			new Promise(resolve=>{
+// 				let img = document.createElement('img');
+// 				img.src = users[i].avatar_url;
+// 				document.body.append(img);
+
+// 				setTimeout(() => {
+// 					img.remove()
+// 					++i;
+// 					resolve(users)
+// 				}, 3000);
+// 		})})
+// 		.then(users=>{
+// 			new Promise(resolve=>{
+// 				let img = document.createElement('img');
+// 				img.src = users[i].avatar_url;
+// 				document.body.append(img);
+
+// 				setTimeout(() => {
+// 					img.remove()
+// 					++i;
+// 					resolve(users)
+// 				}, 3000);
+// 		})})
+// 	})
+
+// let num = 0;
+// console.log(num.toString().split('').sort().reverse().join(''));
+
+// function descendingOrder(n){
+// 	return +n.toString().split('').sort().reverse().join('')
+//  }
+//  function isTriangle(a,b,c) {
+//  let ar = [a,b,c];
+//  ar.sort();
+//  if( (ar[0]+ar[1]) > ar[2] ) return true
+
+//  return false;
+//  }
+
+// function isTriangle(a, b, c) {
+// 	let arr = [a, b, c];
+// 	arr.sort((a,b)=>a-b);
+
+// 	if ((arr[0]+arr[1]) > arr[2]){return true}
+
+// 	return false;
+// }
+// let o = [4,10,1]
+// isTriangle(4,10,1)
+
+// function disemvowel(str) {
+// 	const arr = ['a','e','o','i','u']
+// 	return str.split('').filter((it)=>{
+// 	  return!arr.includes(it.toLowerCase())
+// 	}).join('');
+//  }
+// let s ='This website is for losers LOL!';
+// let arr = s.split('');
+// let f = ['a','e','o','i','u'];
+//  console.log(arr.filter(it=> it))
+
+// function sleep (ms){
+// 	return new Promise(resolve=>{
+// 		setTimeout(()=>resolve(),ms)
+// 	})
+// }
+// let s = sleep
+
+// s(2000).then(()=>console.log(`after 2 sec`))
+// s(5000).then(()=>console.log(`after 5 sec`))
+
+// Promise.all([s(2000), s(5000)])
+// .then(()=> {
+// 	console.log(`all promisses`)
+// })
+
+// Promise.race([s(2000), s(5000)])
+// .then(()=> {
+// 	console.log(`race promisses`)
+// })
+
+
+// const person = Object.create(
+// 	{
+// 		calculateAge(){
+// 			return new Date().getFullYear() - this.birthYear
+// 		}	
+// 	},
+// 	{
+// 	name: {
+// 		value: 'Tema',
+// 		// writable: true,
+// 		// configurable: true,
+// 		enumerable: true
+
+
+
+// 	},
+// 	birthYear: {
+// 		value: 1987,
+// 	},
+// 	age: {
+// 		get(){
+// 			return new Date().getFullYear() - this.birthYear
+// 		},
+// 		set(value){
+// 			document.body.style.backgroundColor = 'red'
+// 			console.log('Set age', value)
+// 		},
+// 	}
+
+// })
+
+// console.log(person)
+
+// for(let k in person) {
+// 	if(person.hasOwnProperty(k)) {
+// 		console.log(k, person[k])
+// }}
+
+
+// function loadScript(src, callback) {
+// 	let script = document.createElement('script');
+// 	script.src = src;
+
+
+// 	script.onload = () => callback(script)
+// 	document.body.append(script);
+// }
+
+// loadScript('js/blabla.js',
+// 	(script) => {
+// 		console.log(`${script.src} end load`)
+// 		loadScript('js/ddd.js', (script) => {
+// 			console.log(`${script.src} end load 2`)
+// 			sayHaha();
+// 			dddJs()
+// 		})
+// 	}
+// // )
+
+// new Promise((resolve, reject) => {
+// 	setTimeout(() => resolve("result"), 2000)
+//  })
+// 	.finally((v) => console.log("Промис завершён",v))
+// 	.then(result => console.log(result));
+
+// function delay(ms){
+// return new Promise(rs=>setTimeout(()=>rs(),ms))
+// }
+// delay(3000).then(()=>console.log(`after 3 cek`))
+
+// class Thenable{
+// 	constructor(num){
+// 		this.num = num;
+// 	}
+// 	then(resolve,reject){
+// 		console.log(resolve)
+// 		setTimeout(()=>resolve(this.num * 2, 2000))
+// 	}
+// }
+
+// new Promise(rs=>setTimeout(()=>rs(1), 1000))
+// .then(result=>{
+// 	return new Thenable(result)
+// })
+// .then(result=>console.log(result))
+
+// fetch('user.json')
+// .then(response=>response.json())
+// .then(user=>fetch(`https://api.github.com/users/${user.name}`))
+// .then(response => response.json())
+// .then(user=>{
+// 	return new Promise(rs=>{
+// 		let img = document.createElement('img');
+// 		img.src = user.avatar_url;
+// 		document.body.append(img);
+
+// 		setTimeout(()=>{
+// 			img.remove();
+// 			rs(user)
+// 		},3000)
+
+// 	})
+// })
+// .then(user =>{
+// 	user.job = 'Frontend';
+// 	console.log(user)
+// })
+
+// function loadJson(url) {
+// 	return fetch(url).then(response => response.json())
+// }
+
+// function loadGitUser(user) {
+// 	console.log(user)
+// 	return fetch(`https://api.github.com/users/${user.name}`)
+// 	.then(response=>response.json())
+// }
+
+// function showAvatar(user) {
+// 	console.log(user)
+// 	return new Promise((rs, rj) => {
+// 		let img = document.createElement('img');
+// 		img.src = user.avatar_url;
+// 		img.className = 'promise-avatar-example';
+// 		document.body.append(img);
+
+// 		setTimeout(() => {
+// 			img.remove();
+// 			console.log(img)
+// 			rs(user);
+// 		}, 3000);
+// 	})
+// }
+
+
+
+// loadJson('user.json')
+// 	.then(loadGitUser)
+// 	.then(showAvatar)
+// 	.then(user => console.log(`Показ ${user.login} завершён`))
+
+// let pr = new Promise((resolve, reject) => {
+// 	resolve("ок");
+//  }).then((result) => {
+// 	 console.log(result)
+// 	throw new Error("Ошибка!"); // генерируем ошибку
+//  }).catch(alert); // Error: Ошибка!
+
+//  new Promise(function(resolve, reject) {
+// 	setTimeout(() => {
+// 	  throw new Error("Whoops!")
+// 	}, 1000);
+//  }).catch(alert);
+
+//  let p = new Promise(function(resolve, reject) {
+// 		setTimeout(() => {
+// 		  throw new Error("Whoops!")
+// 		}, 1000);
+// 	 }).catch(alert);
+//  console.log(p)
+
+
+// Promise.all([
+// 	new Promise(rs=>setTimeout(()=>rs(1),3000)),
+// 	new Promise(rs=>setTimeout(()=>rs(2),2000)),
+// 	new Promise(rs=>setTimeout(()=>rs(3),1000)),
+// ])
+// .then(alert)
+
+// let urls = [
+// 	'https://api.github.com/users/iliakan',
+// 	'https://api.github.com/users/remy',
+// 	'https://api.github.com/users/jeresig'
+//  ];
+
+//  let requests  = urls.map(url=>fetch(url));
+//  console.log(requests)
+
+//  Promise.all(requests)
+//  .then(responses=>{
+// 	 console.log(responses);
+// 	 responses.forEach(response=>console.log(`${response.url}: ${response.status}`))
+//  })
+
+// let names = [
+// 	'iliakan', 'remy', 'jeresig'
+// ]
+
+// let requests = names.map(name=>fetch(`https://api.github.com/users/${name}`))
+
+// Promise.all(requests)
+// .then(response=>{
+// 	console.log(response)
+// 	return Promise.all(response.map(r=>r.json()))})
+
+// .then(users=>{
+// console.log(users);
+// users.forEach(user=>console.log(user.name))
+// })
+
+// let names = [
+// 	'iliakan','hkkhhkkh', 'remy', 'jeresig','kabanproff'
+// ]
+
+// let urls = [
+// 	'https://api.github.com/users/iliakan',
+// 	'https://api.github.com/users/remy',
+// 	'https://no-such-url'
+//  ];
+
+// Promise.allSettled(names.map(name=>fetch(`http://api.github.com/users/${name}`)))
+// Promise.allSettled(urls.map(url=>fetch(url)))
+
+// .then(responses=>{
+// 	console.log(responses)
+// 	// return Promise.allSettled(responses.map(url=>fetch(url)))
+// 	return responses
+// // })
+// .then(results=>{
+// 	console.log(results);
+// 	results.forEach((result,ind)=>{
+// 		if(result.status == 'fulfilled'){
+// 			console.log(`${names[ind]} : ${result.value.status}`)
+// 		}
+// 		if(result.status == 'rejected'){
+// 			console.log(`${names[ind]}: ${result.reason}`)
+// 		}
+// 	})
+// })
+
+// if(!Promise.allSettled){
+// 	Promise.allSettled = function(promises){
+// 		return Promise.all(promises.map(p=>Promise.resolve(p)
+// 		.then(value=>({
+// 			status: 'fulfilled',
+// 			value: value
+// 		}), error=> ({
+// 			status: 'rejected',
+// 			reason: error
+// 		}))))
+// 	}
+// }
+
+
+// Promise.race([
+// 	new Promise((resolve,reject)=>setTimeout(()=>resolve(1),2000)),
+// 	new Promise((resolve,reject)=>setTimeout(()=>reject(new Error('Ошибка')),1000)),
+// 	new Promise((resolve,reject)=>setTimeout(()=>resolve(3),3000))
+// ]).then(e=>console.log(e),e=>console.log(e))
+
+// let cache = new Map();
+
+// function loadCached(url){
+// 	if (cache.has(url)){
+// 		return Promise.resolve(cache.get(url))
+// 	}
+// 	return fetch(url)
+// 	.then(response=>response.text())
+// 	.then(text=>{
+// 		cache.set(url,text);
+// 		return text
+// 	})
+// }
+
+
+// function loadScript(src,callback){
+// 	let script = document.createElement('script');
+// 	script.src = src;
+
+// 	script.onload = ()=>callback(null, script);
+// 	script.onerror = ()=>callback(new Error(`Ошибка загрузки скрипта ${script.src}`))
+
+// 	document.head.append(script);
+// }
+
+// loadScript('js/blabla.js',(e,scr)=> {
+// 	sayHaha(); console.log(scr)
+// })
+
+// function loadScriptPromise(src){
+// 	return new Promise(resolve)
+// }
+
+// let obj = {
+// 	name: 'pavel',
+// 	age: 22,
+// 	isMan: true
+// }
+
+// let {name, isMan,...rest} = obj;
+// console.log(name)
+// console.log(isMan)
+// console.log(rest)new Promise(function(resolve, reject) {
+
+
+
+// console.log(p)
+// 	.then(rs => console.log(rs))
+// 	.catch(error => alert(error))
+// 	.finally(() => console.log('f'))
+
+// let user = {
+// 	name: 'pavel',
+// 	__proto__: new Object()
+// }
+
+// let admin = {
+// 	isAdmin: true
+// }
+
+// admin.__proto__ = user;
+
+
+// let promise = new Promise((resolve, reject) => {
+// 	setTimeout(() => resolve('ddd'), 2000)
+// })
+// let promiseOld = new Promise(function (resolve, reject) {
+
+// 	setTimeout(() => {
+// 		throw new Error("Whoops!");
+
+// 	}, 1000);
+
+// })
+
+// async function accs() {
+// 	try {
+
+// 		let pOld = await new Promise(function (resolve, reject) {
+
+// 			setTimeout(() => {
+// 				throw new Error("Whoops!");
+// 			}, 1000);
+// 		});
+// 		console.log(pOld);
+// 	}
+// 	catch (e) {
+// 			console.log(e + 'sfsfsfsfsf')
+// 		}
+
+// 	}
+
+// accs()
+// console.log(accs())
+
+// function loadScript(src, callback) {
+// 	let script = document.createElement('script');
+// 	script.src = src;
+
+// 	script.onload = () => callback(null, script);
+// 	script.onerror = () => callback(new Error('Errrror bla'));
+
+// 	document.head.append(script);
+// }
+
+// let loadScriptPromise = function (src) {
+// 	return new Promise((resolve, reject) => {
+// 		loadScript(src, (err, script) => {
+// 			if (err) reject(err)
+// 			else resolve(script)
+// 		})
+// 	})
+// }
+
+// function promisify(f) {
+// 	return function (...args) {
+// 		return new Promise((resolve, reject) => {
+// 			function callback(err, result) {
+// 				if (err) {
+// 					return reject(err)
+// 				}
+// 				else {
+// 					resolve(result)
+// 				}
+// 			}
+// 			args.push(callback)
+// 			f.call(this, ...args)
+// 		})
+// 	}
+// }
+
+// let loadScriptPromise = promisify(loadScript);
+// loadScriptPromise('js/blabla.js')
+// .then(val=>console.log(val))
+
+
+// const obj = {
+// 	1:1,
+// 	2:2,
+// 	3:3
+// }
+// console.log(Object.keys(obj))
+// console.log(Object.values(obj))
+// console.log(Object.values(obj)===Object.keys(obj))
+
+// let promise = Promise.resolve();
+// promise.then(()=>console.log('promise end'));
+// console.log('code end')
+
+// let promise = Promise.reject(new Error('Ошибка в промисе'));
+// promise.catch(err=>console.log('поймана'));
+
+// setTimeout(()=>promise.catch(err=>console.log('поймананана'),1000))
+
+// window.addEventListener('unhandledrejection', event=>{
+// 	console.log(event.reason)
+// })
+
+// async function f(){
+// 	let promise = new Promise((resolve,reject)=>{
+// 		setTimeout(()=>resolve('готово'),3000)
+// 	})
+
+// let result = await promise;
+// console.log(result)
+// }
+
+// f()
+
+// async function showAvatar(){
+// 	let response = await fetch('user.json');
+// 	console.log(response)
+// 	let user = await response.json();
+// 	console.log(user)
+// 	//	запрашиваем информацию из GitHub 
+// 	let gitResponse = await fetch(`https://api.github.com/users/${user.name}`);
+// 	let gitUser = await gitResponse.json();
+// 	console.log(gitUser)
+// 	// отображаем Аватар пользователя
+// 	let img = document.createElement('img')
+// 	img.src = gitUser.avatar_url
+// 	img.className = 'promise-avatar-example'
+// 	document.body.append(img)
+
+// 	//ждём 3 секунды и затем скрываем аватар
+
+// 	await new Promise((resolve,reject)=> setTimeout(()=>resolve(),3000));
+
+// 	img.remove();
+// 	return gitUser
+// }
+// showAvatar().
+
+// class Thenable{
+// 	constructor(num){
+// 		this.num = num;
+// 	}
+// 	then(resolve,reject){
+// 		// console.log(resolve)
+// 		setTimeout(()=>resolve(this.num * 5), 4000)
+// 	}
+// }
+
+// let d = new Thenable(3)
+// d.then(rs=>console.log(rs))
+
+// async function f(){
+// 	console.log(3);
+// 	let res = await new Thenable(5);
+// 	console.log(res)
+// 	return res
+// }
+
+// let pr = f()
+// console.log(pr)
+
+// class Waiter{
+// 	async wait(){
+// 		return await Promise.resolve(1);
+// 	}
+// }
+
+// new Waiter()
+// .wait()
+// .then(alert)
+
+// async function loadJson(url){
+// 	let response = await fetch(url);
+// 	if(response.status== 200){
+// 		
+// let json = await response.json();
+// return json;
+// 	}
+// 		throw new Error(response.status)
+// 	
+// }
+
+// loadJson('user.json')
+// .then(rs=>console.log(rs))
+// .catch(alert)
+
+
+// class HttpError extends Error {
+// 	constructor(response) {
+// 		super(`${response.status} for ${response.url}`);
+// 		this.name = 'HttpError';
+// 		this.response = response;
+// 	}
+// }
+
+// async function loadJson(url) {
+// 	let response = await fetch(url);
+// 	if (response.status == 200) {
+// 		let json = await response.json();
+// 		return json;
+// 	}
+// 	throw new HttpError(response)
+
+// }
+
+// // Запрашивать логин, пока github не вернёт существующего пользователя
+// async function demoGitHubUser() {
+
+// 	let gitUser
+
+// 	for (; 1;) {
+
+// 		let name = prompt('Введите логин?', 'kabanproff');
+// 		try {
+
+// 			gitUser = await loadJson(`https://api.github.com/users/${name}`);
+// 			console.log(gitUser,gitUser.name)
+// 			break;
+// 		}
+// 		catch (e) {
+// 			console.log(e)
+// 			if (e instanceof HttpError && e.response.status == 404) {
+// 				alert('Такого пользователя не существует, повторите ввод.')
+
+// 			} else {
+// 				throw e;
+// 			}
+// 		}
+
+// 	}
+
+// 	alert(`Полное имя: ${gitUser.name}.`);
+// 	console.log(`Полное имя: ${gitUser.name}.`);
+// 	return gitUser;
+// }
+
+// demoGitHubUser()
+
+// for(;;) console.log('!')
+
+// class HttpError extends Error {
+// 	constructor(response) {
+// 		super(`${response.status} for ${response.url}`);
+// 		this.name = 'HttpError';
+// 		this.response = response;
+// 	}
+// }
+
+// async function loadJson(url) {
+// 	let response = await fetch(url);
+// 	if (response.status == 200) {
+// 		let user = await response.json();
+// 		return user;
+// 	}
+// 	throw new HttpError(response)
+// }
+
+// запрашивать логин, пока гит не вернет пользователя
+
+// async function demoGitHubUser(){
+
+// 	let user;
+
+// 	for(;;){
+
+// 		let name = prompt('Введите имя пользователя', 'kabanproff');
+
+// 		try{
+// 			user = await loadJson(`https://api.github.com/users/${name}`);
+// 			break;
+// 		}
+// 		catch(e){
+// 			console.log(e)
+// 			if(e instanceof HttpError && e.response.status == 404) {
+// 				alert(`Вы ввели пользователя которого не существует, повторите попытку`)
+// 			}
+// 			else throw e;
+// 		}
+
+// 	}
+// 	alert(`Полное имя: ${user.name}, проживает: ${user.location}`)
+// 	return user;
+// }
+
+// demoGitHubUser()
+
+// async function wait() {
+// 	await new Promise(resolve => setTimeout(resolve, 2000));
+
+// 	return 10
+// }
+
+// function f() {
+// 	wait().then(resolve =>alert(resolve))
+// }
+// f()
+
+// async function wait() {
+// 	await new Promise(resolve => setTimeout(resolve, 1000));
+
+// 	return 10;
+//  }
+
+//  function f() {
+// 	// покажет 10 через 1 секунду
+// 	wait().then(result => alert(result));
+//  }
+
+//  f();
+
+// async function wait(){
+// 	await new Promise(resolve=>setTimeout(resolve, 3000))
+// 	return 20;
+// }
+
+// function f(){
+// 	wait().then(v=>console.log(v))
+// }
+// f()
+
+// let y = new Map([[true, '33']])
+// y.set([], 5)
+// console.log(y.size)
+// console.log(y.delete(true))
+// console.log(y)
+
+
+// let room = {
+// 	number: 23
+//  };
+
+//  let meetup = {
+// 	title: "Conference",
+// 	participants: [{name: "John"}, {name: "Alice"}],
+// 	place: room // meetup ссылается на room
+//  };
+
+//  room.occupiedBy = meetup; // room ссылается на meetup
+
+//  console.log( JSON.stringify(meetup, ['title', 'participants']) );
+//  // {"title":"Conference","participants":[{},{}]}
+
+//  let json = `{
+// 	name: "John",                     // Ошибка: имя свойства без кавычек
+// 	"surname": 'Smith',               // Ошибка: одинарные кавычки в значении (должны быть двойными)
+// 	'isAdmin': false                  // Ошибка: одинарные кавычки в ключе (должны быть двойными)
+// 	"birthday": new Date(2000, 2, 3), // Ошибка: не допускается конструктор "new", только значения.
+// 	"friends": [0,1,2,3]                     // Здесь всё в порядке
+//  }`;
+
+//  let u = JSON.stringify(json);
+
+
+//  let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+
+// let meetup = JSON.parse(str, function(key, value) {
+//   if (key == 'date') return new Date(value);
+//   return value;
+// });
+
+
+// let value = "Сюрприз!";
+
+// function f() {
+//   let value = "ближайшее значение";
+
+//   function g() {
+//    alert(value)
+//   }
+
+//   return g;
+// }
+
+// let g = f();
+// g();
+// console.log(value)
+
+// let sayHi = function f(w){
+// 	if(w)console.log(`Hi ${w}`)
+// 	else f('guest')
+// }
+
+// let s={
+// 	na:4,
+// 	f:'3'
+// }
+// let str = 'dfdfdffdfd'
+// console.log(str.__proto__)
+
+// class D {}
+// let d = new D();
+// // console.log(d)
+// // console.log(d instanceof D)
+// console.log(d.__proto__)
+
+// function f(phrase) {
+// 	return class {
+// 	  sayHi() { alert(phrase) }
+// 	}
+//  }
+
+//  class User extends f("Привет") {}
+
+// //  new User().sayHi(); // Привет
+
+// //  console.log(new User().__proto__)
+
+// function f(){
+// 	return 
+// }
+
+// console.log(f())
+
+// let user = {
+// 	name: 'kabanproff',
+// 	surname: 'kabanoff',
+// }
+// async function fech(user)
+// {let response = await fetch('/article/fetch/post/user', {
+// 	method: 'POST',
+// 	headers: {
+// 	  'Content-Type': 'application/json;charset=utf-8'
+// 	},
+// 	body: JSON.stringify(user)
+//  });
+
+//  let result = await response.json();
+//  alert(result.message);}
+
+//  fech(user)
+
+// let s = fetch('https://api.github.com/users/kabanproff',);
+// s.then(data=> console.log(data.status))
+// console.log(s)
+// let user = {
+// 	name:'pitr',
+// 	age:32,
+// 	sayHi(){
+// 		console.log('Привет')
+// 	}
+// }
+// let {name: имя = 'ddd',lastName = 'Вжик',age,...rest}=user 
+// console.log(name,rest, lastName)
+
+// let arr = [
+// 	1,2,3,4,5,6,7,8,9,0
+// ];
+
+// let [d,a,b,c,,e ,...rest] = arr;
+// console.log(a,e,rest)
+
+// try{
+// throw new Error('Ошибка')
+// }
+
+// catch({name, message, stack}){
+// 	console.log(name)
+// 	console.log(message)
+// 	console.log(stack)
+// }
+
+// let user = {
+// 	name: 'Вася',
+// 	sayHaha(){
+// 		console.log(this.name);
+// 	}
+// }
+
+// let admin = {
+// 	name:'lena',
+
+// }
+// admin.__proto__ = user;
+// let d = admin.sayHaha;
+// d()
+// admin.sayHaha();
+
+// function Wait(name,wait){
+// 	this.name = name;
+// 	this.wait = wait;
+// }
+
+// Wait.prototype = user
+// let tema = new Wait('Artyom',23)
+// tema.sayHaha()
+
+
+// String.prototype.test = function (){
+// 	return this+'123'
+// }
+
+
+// console.log('rr'.test())
+
+// function loadScript(calback){
+// 	setTimeout(()=>calback(),2000)
+
+// }
+// function load (){
+// 	console.log('script');
+// }
+
+// loadScript(load)
+
+// async function load(){
+// 	try{
+// 	let promise  = await new Promise((resolve,reject)=>setTimeout(() => {
+// 	resolve(2+2);
+// }, 2000))
+// 	}
+// 	catch(e){
+
+// 	}
+// 	console.log(promise)
+
+
+
+// }
+// load()
+// .finally()
+// .then((data)=>console.log(data))
+// .then()
+// .then()
+// .catch((e)=>console.log(e))
+
+// PUT DELETE POST GET
+// CREATE READ UPDATE DELETE
+
+// 400,401,403,404,418
+// ,500,502,504,504
+
+// 201,204,
+
+// 300 ~ 2
+
+
+// fetch(url,{
+// 	method:'POST',
+// 	headers:{
+
+// 	},
+// 	body: JSON.stringify(user)
+// })
+
+
+let arr = [
+	'яблоко', 'банан', 'груша', 'апельсин', 'персик', 'банан', 'груша',
+	'персик', 'банан', 'яблоко', 'банан', 'груша', 'апельсин',
+
+]
+
+// function countFruit(arr){
+// 	let countMap = new Map();
+// 	arr.forEach(fruit=>{
+// 	if(countMap.has(fruit)) countMap.set(fruit,countMap.get(fruit) +1)
+// 	else countMap.set(fruit, 1)
+// })
+// 	return Object.fromEntries(countMap)
+// }
+
+
+
+// let m = new Map()
+
+// m.set('яблоко',0)
+// console.log(m.get('яблоко'))
+// m.set('яблоко',m.get('яблоко') +1)
+// m.set('яблоко',m.get('яблоко') +1)
+// m.set('яблоко',m.get('яблоко') +1)
+// m.set('яблоко',m.get('яблоко') +1)
+// // .set('яблоко')
+// console.log(m)
+
+// console.log(('b'+'a'+ +'a'+'a').toLowerCase())
+
+// class User {
+// 	construnctor(name){
+// 		this.name = name;
+// 	}
+// 	sayHi(){console.log(`Привет - ${this.name}`)}
+// }
+
+// let Track = function (params) {
+// 	// console.log(params)
+
+// 	this.name = params.name
+// 	this.url = params.url
+
+// 	// this.playTrack = function () {
+// 	// 	console.log(`We started playing, ${this.name}`)
+// 	// }
+// }
+// Track.prototype.playTrack =function () {
+// 	console.log(`We started playing, ${this.name}`)
+// }
+
+// let  YouTubeTrack = function(params){
+// 	Track.apply(this,arguments);
+// 	this.image = params.image;
+// };
+
+// YouTubeTrack.prototype = Object.create(Track.prototype)
+// // YouTubeTrack.prototype = Track
+// YouTubeTrack.prototype.constructor = YouTubeTrack
+
+// let youTubeTrack01 = new YouTubeTrack({
+// 	name:'youTubeTrack01',
+// 	url:'youtubeTrack01.mp3',
+// 	image:'track01.jpg'
+// });
+// let youTubeTrack02 = new YouTubeTrack({
+// 	name:'youTubeTrack02',
+// 	url:'youtubeTrack02.mp3',
+// 	image:'track02.jpg'
+// })
+
+
+
+
+// let track01 = new Track({
+// 	name: 'track01',
+// 	url: 'track01.mp3',
+
+// });
+
+// let track02 = new Track({
+// 	name: 'track02',
+// 	url: 'track02.mp3',
+
+// });
+
+// console.log(track01)
+// console.log(track02)
+// console.log(youTubeTrack01)
+// console.log(youTubeTrack02)
+
+// youTubeTrack01.playTrack()
+
+
+// let User = class myClass{
+// 	sayHi(){
+// 		console.log('Hellow' + myClass)
+// 	}
+// }
+
+// function makeClass(str){
+// 	return class{
+// 		sayHi(){
+// 			console.log(str)
+// 		}
+// 	}
+// }
+
+// let User = makeClass('Привет');
+
+// new User().sayHi()
+
+// class User {
+// 	constructor(name) {
+// 		this._name = name;
+// 	}
+
+// get name() {
+// 	return this._name;
+// }
+
+// set name(val) {
+// 	while (val.length < 4) {
+// 		console.log(val + ' Слижком короткое имя');
+// 		val = prompt('ВВедите имя', '');
+
+// 	}
+// 	this._name = val
+// }
+// }
+
+
+// Object.definePropesties(User.prototype, {
+// 	name: {
+
+// 		get() {
+// 			return this._name
+// 		},
+
+// 		set(name) {
+// 			while (val.length < 4) {
+// 				console.log(val + ' Слижком короткое имя');
+// 				val = prompt('ВВедите имя', '');
+// 			}
+// 			this._name = val
+// 		}
+
+// 	}
+// })
+
+
+// let user = new User('Тёа');
+// console.log(user.name)
+
+
+// class MyClass{
+// 	prop = vall; // свойство
+// 	constructor(name){
+// 		//конструктор
+// 	}
+// 	method(){
+// 		//метод
+// 	}
+// }
+// class Clock{
+
+// 	constructor({template}){
+// 		this.template = template;
+
+// 	}
+// 	render(){
+// 		let date = new Date();
+// 		let hours = date.getHours();
+// 		let mins = date.getMinutes();
+// 		let secs = date.getSeconds();
+// 		if(hours<10)hours = '0' + hours;
+// 		if(mins<10)mins = '0' + mins;
+// 		if(secs<10)secs = '0' + secs;
+// 		let output = this.template
+// 		.replace('h',hours)
+// 		.replace('m', mins)
+//       .replace('s', secs);
+
+// 		console.log(output)
+
+// 	}
+// 	start(){
+// 		this.render();
+// 		this.timer = setInterval(()=>this.render(), 1000)
+// 	}
+// 	stop(){
+// 		clearInterval(this.timer);
+// 	}
+// }
+
+// function Clock({ template }) {
+
+// 	let timer;
+
+// 	function render() {
+// 	  let date = new Date();
+
+// 	  let hours = date.getHours();
+// 	  if (hours < 10) hours = '0' + hours;
+
+// 	  let mins = date.getMinutes();
+// 	  if (mins < 10) mins = '0' + mins;
+
+// 	  let secs = date.getSeconds();
+// 	  if (secs < 10) secs = '0' + secs;
+
+// 	  let output = template
+// 		 .replace('h', hours)
+// 		 .replace('m', mins)
+// 		 .replace('s', secs);
+
+// 	  console.log(output);
+// 	}
+
+// 	this.stop = function() {
+// 	  clearInterval(timer);
+// 	};
+
+// 	this.start = function() {
+// 	  render();
+// 	  timer = setInterval(render, 1000);
+// 	};
+
+//  }
+
+//  let clock = new Clock({template: 'h:m:s'});
+//  clock.start();
+
+// class Animal{
+// 	constructor(name){
+// 		this.speed = 0;
+// 		this.name = name;
+// 	}
+// 	run(speed){
+// 		this.speed = speed;
+// 		console.log(`${this.name} бежит со скоростью ${this.speed} км.ч.`)
+
+// 	}
+// 	stop(){
+// 		this.speed = 0;
+// 		console.log(`${this.name} стоит.`);
+
+// 	}
+// 	eat(v){
+// 		console.log(`${this.name} ест ${v}`)
+// 	}
+// }
+
+// let animal = new Animal('Бэки');
+
+// class Rabbit extends Animal{
+// 	constructor(name, earLangth){
+// 		super(name)
+// 		this.speed = 0;
+// 		this.earLangth = earLangth;
+// 	}
+// 	hide(){
+// 		console.log(`${this.name} спрятался`)
+// 	}
+// 	stop(){
+// 		super.stop();
+// 		setTimeout(()=> this.hide(),2000)
+// 	}
+// }
+
+// let rabitt = new Rabbit('Кролик',10);
+
+// rabitt.run(5);
+// rabitt.stop()
+// console.log(rabitt.earLangth)
+// rabitt.eat('Морковь')
+
+// class Animal {
+
+// 	constructor(name) {
+// 	  this.name = name;
+// 	}
+
+//  }
+
+//  class Rabbit extends Animal {
+// 	constructor(name) {
+// 	  super(name);
+// 	  this.created = Date.now();
+// 	}
+//  }
+
+//  let rabbit = new Rabbit("Белый кролик"); // Error: this is not defined
+//  alert(rabbit.name);
+
+// class Clock {
+// 	constructor({ template }) {
+// 	  this.template = template;
+// 	}
+
+// 	render() {
+// 	  let date = new Date();
+
+// 	  let hours = date.getHours();
+// 	  if (hours < 10) hours = '0' + hours;
+
+// 	  let mins = date.getMinutes();
+// 	  if (mins < 10) mins = '0' + mins;
+
+// 	  let secs = date.getSeconds();
+// 	  if (secs < 10) secs = '0' + secs;
+
+// 	  let output = this.template
+// 		 .replace('h', hours)
+// 		 .replace('m', mins)
+// 		 .replace('s', secs);
+
+// 	  console.log(output);
+// 	}
+
+// 	stop() {
+// 	  clearInterval(this.timer);
+// 	}
+
+// 	start() {
+// 	  this.render();
+// 	  this.timer = setInterval(() => this.render(), 1000);
+// 	}
+//  }
+
+//  class ExtendedClock extends Clock{
+// 	 constructor(options){
+// 		 super(options);
+// 		 let {precision = 1000} = options;
+// 		 this.precision = precision;
+// 	 }
+// 	 start(){
+// 		 this.render();
+// 		 this.timer = setInterval(()=>this.render(),this.precision)
+// 	 }
+//  }
+
+//  let c = new ExtendedClock({template: 'h:m:s', precisions: 2000})
+
+
+// class Article{
+// 	constructor(title,date){
+// 		this.title = title;
+// 		this.date = date;
+// 	}
+
+// 	static compare(articleA, articleB){
+// 		return articleA.date - articleB.date;
+// 	}
+
+// 	static createTodays(){
+// 		return new this('Сегодняшняя новость', new Date());
+// 	}
+// }
+
+// let articles = [
+// 	new Article('HTML', new Date(2019,1,1)),
+// 	new Article('CSS', new Date(2019,0,1)),
+// 	new Article('JS', new Date(2019,11,1)),
+// ];
+
+// articles.sort(Article.compare);
+// console.log(articles)
+
+// let art = Article.createTodays()
+// console.log(art.title)
+
+// class Animal {
+// 	constructor(name,speed){
+// 		this.speed = speed;
+// 		this.name = name;
+// 	}
+
+// 	run (speed = 0){
+// 		this.speed += speed;
+// 		console.log(`${this.name} бежит со скоростью ${this.speed} км.ч`)
+
+// 	}
+// 	static compare (animalA, animalB){
+// 		return animalA.speed - animalB.speed;
+// 	}
+// }
+
+// class Rabbit extends Animal{
+// 	hide(){
+// 		console.log(`${this.name} прячется!`);
+// 	}
+// }
+
+// let rabbits = [
+// 	new Rabbit('Белый кролик', 10),
+// 	new Rabbit('Серый кролик', 20),
+// 	new Rabbit('Черный кролик', 15),
+// ]
+
+// rabbits.sort(Rabbit.compare);
+
+// console.log(rabbits)
+// console.log(Rabbit.__proto__ === Animal);
+
+// console.log(Rabbit.prototype.__proto__ === Animal.prototype)
+
+// class Rabbit extends Object {
+// 	constructor(name) {
+// 		super()
+// 	  this.name = name;
+// 	}
+//  }
+
+//  let rabbit = new Rabbit("Кроль");
+
+//  alert( rabbit.hasOwnProperty('name') ); // Ошибка
+
+// class Animal {
+// static type = 'Animal';
+
+// 	constructor(options) {
+// 		this.name = options.name
+// 		this.age = options.age
+// 		this.hasTail = options.hasTail
+// 	}
+// 	run(speed = 0){
+// 		this.speed = speed;
+// 		if(speed>0)console.log(`${this.name} бежит со скоростью ${this.speed} км.ч`) 
+// 	}
+
+// 	voice(){
+// 		console.log(`I am Animal`)
+// 	}
+// }
+
+// const animal = new Animal({
+// 	name: 'Animal',
+// 	age: 5,
+// 	hasTail: true,
+// })
+
+// console.log(animal);
+
+// class Cat extends Animal{
+// 	constructor(options){
+// 		super(options);
+// 		this.hasTail = true;
+// 		this.color = options.color;
+// 	}
+// 	voice(){
+// 		super.voice()
+// 		console.log(`I am Cat`)
+// 	}
+
+// 	get ageInfo(){
+// 		return this.age * 7;
+// 	}
+// 	set ageInfo(v){
+// 		this.age = v
+// 	}
+// }
+
+// const cat = new Cat(
+// 	{
+// 		name: 'Animal',
+// 		age: 3,
+// 		color: 'black'	
+// 	}
+// )
+
+// console.log(cat)
+
+// class Component{
+// 	constructor(selector){
+// 		this.$el = document.querySelector(selector)
+// 	}
+
+// 	hide(){
+// 		this.$el.style.display = 'none';
+// 	}
+
+// 	show(){
+// 		this.$el.style.display = 'block';
+// 	}
+// }
+
+// class Box extends Component{
+// 	constructor(options){
+// 		super(options.selector)
+// 		this.$el.style.height = this.$el.style.width = options.size + 'px';
+// 		this.$el.style.backgroundColor = options.color
+// 	}
+// }
+
+// class Circle extends Box{
+// 	constructor(options){
+// 		super(options)
+// 		this.$el.style.borderRadius = '50%'
+// 	}
+// }
+
+// const box1 = new Box({
+// 	selector: '#box1',
+// 	size: 100,
+// 	color:'red'
+// })
+// const box2 = new Box({
+// 	selector: '#box2',
+// 	size: 140,
+// 	color:'black'
+// })
+// const circle3 = new Circle({
+// 	selector: '#box3',
+// 	size: 110,
+// 	color:'cyan'
+// })
+
+// function User (name){
+// 	this.name =  name;
+// }
+
+// class CoffeM {
+// 	_waterAmount = 0;
+// 	_activePower  = 2;
+// 	#waterLimit = 1000;
+// 	#waterAmount = 1000;
+
+// 	constructor(power) {
+// 		this._power = power;
+// 		console.log(`Создана кофеварка мощностью ${this.power}`)
+// 	}
+// 	get power(){
+// 		return this._activePower * this._power;
+// 	}
+
+// 	set waterAmount(v) {
+// 		// this._waterAmount = v
+// 		if(v<0) throw new Error('Отрицательный уровень воды')
+// 		if(v>this.#waterLimit) throw new Error('Большой уровень воды')
+// 		this.#waterAmount  = v
+// 	}
+// 	get waterAmount(){
+// 		return this._waterAmount
+// 	}
+
+// }
+// let cm = new CoffeM(500);
+// cm.waterAmount = 200;
+
+// class Cup extends CoffeM{
+// 	#waterAmount
+// 	constructor(amount){
+// 		super();
+// 		this.#waterAmount = amount;
+// 	}
+// 	get waterAmount(){
+// 		return this.#waterAmount
+// 	}
+
+// }
+
+// let cp = new Cup(150)
+// console.log(cm)
+// console.log(cp)
+// let sayMixin = {
+// 	say(str){
+// 		console.log(`${str}`)
+// 	}
+// }
+
+// let sayHiMixin = {
+// 	sayHi(){
+// 		super.say(`Привет, ${this.name}`)
+// 	},
+// 	sayBye(){
+// 		super.say(`Пока, ${this.name}`);
+// 	},
+// 	__proto__: sayMixin,
+
+// }
+
+// class User{
+// 	names = 'dd'
+// 	constructor(name){
+// 		this.name = name;
+// 	}
+// }
+
+
+// Object.assign(User.prototype, sayHiMixin);
+
+// let v = new User('Вася');
+
+// v.sayHi();
+// v.sayBye();
+
+// console.log(Object.getOwnPropertyNames(User.prototype))
+// console.log(v)
+
+class Animal {
+	#age = 2;
+	static color = 'grey'
+	constructor({name, speed}){
+		this.name = name;
+		this.speed = speed;
+	}
+	run(){
+		console.log(`Бежим скорость ${this.speed} км.ч`)
+	}
+	
+	
+}
+
+class Cat extends Animal{
+	constructor(property){
+		super(property)
+		this.hasTail = property.hasTail
+		
+		
+	}
+
+	run(){
+		super.run();
+		console.log(`Не запыхался`)
+		// console.log(super)
+	}
+}
+let animal = new Cat({name:'Кот', speed: 15, hasTail: true})
+
+// console.log(animal.run());
+// console.log(animal instanceof Function)
+// // console.log(a)
+
+// let mixin = {
+// 	say(str){
+// 		console.log(`${str}`)
+// 	}
+// }
+// let mixM = {
+// 	firstName(){
+// 		console.log(this.name)
+// 		super.say(this.name)
+		
+// 	},
+// 	__proto__: mixin,
+// }
+
+// Object.assign(Cat.prototype,mixM)
+
+// animal.firstName()
+
+// let a = 5
+// const b = a;
+// a = NaN
+
+// console.log(a)
+// console.log(b)
+
+// let  options = {
+	
+// 	method: 'GET',
+// 	headers:{
+// 		'Content-Type':'Application/json'
+// 	},
+// 	body: JSON.stryngyfy({
+// 		name: 'Kaban',
+// 		login: 'kabanproff',
+// 	})
+// }
+
+
+// 'https://dog.ceo/api/breeds/image/random'
+// 'https://api.github.com/users/kabanproff'
+
+
+// async function getUser(){
+// 	let response = await fetch('https://dog.ceo/api/breeds/image/random');
+// 	console.log(response)
+// 	let result =  await response.json()
+// 	let img = document.createElement('img');
+// 	img.src = result.message;
+// 	document.body.append(img)
+// 	console.log(result)
+// }
+
+// getUser()
+
+// console.assert(1, "Error haha")
 

@@ -1,7 +1,7 @@
 // console.log("Привет я ddd");
-// function dddJs(){
-// 	console.log(`function ddd true`);
-// }
+function dddJs(){
+	console.log(`function ddd true`);
+}
 
 let user = {
 	name: 'Артём',
