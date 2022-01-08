@@ -4069,10 +4069,10 @@ console.clear();
 // console.log(worker.slow(9 , 7));
 // console.log(worker.slow(9,7,9));
 
-function work(a, b) {
-	console.log(a + b);
-}
-let ddd;
+// function work(a, b) {
+// 	console.log(a + b);
+// }
+// let ddd;
 // function spy(func) {
 // 	this.calls = new Array();
 
@@ -8819,11 +8819,11 @@ let ddd;
 // })
 
 
-let arr = [
-	'яблоко', 'банан', 'груша', 'апельсин', 'персик', 'банан', 'груша',
-	'персик', 'банан', 'яблоко', 'банан', 'груша', 'апельсин',
+// let arr = [
+// 	'яблоко', 'банан', 'груша', 'апельсин', 'персик', 'банан', 'груша',
+// 	'персик', 'банан', 'яблоко', 'банан', 'груша', 'апельсин',
 
-]
+// ]
 
 // function countFruit(arr){
 // 	let countMap = new Map();
@@ -9419,35 +9419,35 @@ let arr = [
 // console.log(Object.getOwnPropertyNames(User.prototype))
 // console.log(v)
 
-class Animal {
-	#age = 2;
-	static color = 'grey'
-	constructor({name, speed}){
-		this.name = name;
-		this.speed = speed;
-	}
-	run(){
-		console.log(`Бежим скорость ${this.speed} км.ч`)
-	}
-	
-	
-}
+// class Animal {
+// 	#age = 2;
+// 	static color = 'grey'
+// 	constructor({name, speed}){
+// 		this.name = name;
+// 		this.speed = speed;
+// 	}
+// 	run(){
+// 		console.log(`Бежим скорость ${this.speed} км.ч`)
+// 	}
 
-class Cat extends Animal{
-	constructor(property){
-		super(property)
-		this.hasTail = property.hasTail
-		
-		
-	}
 
-	run(){
-		super.run();
-		console.log(`Не запыхался`)
-		// console.log(super)
-	}
-}
-let animal = new Cat({name:'Кот', speed: 15, hasTail: true})
+// }
+
+// class Cat extends Animal{
+// 	constructor(property){
+// 		super(property)
+// 		this.hasTail = property.hasTail
+
+
+// 	}
+
+// 	run(){
+// 		super.run();
+// 		console.log(`Не запыхался`)
+// 		// console.log(super)
+// 	}
+// }
+// let animal = new Cat({name:'Кот', speed: 15, hasTail: true})
 
 // console.log(animal.run());
 // console.log(animal instanceof Function)
@@ -9462,7 +9462,7 @@ let animal = new Cat({name:'Кот', speed: 15, hasTail: true})
 // 	firstName(){
 // 		console.log(this.name)
 // 		super.say(this.name)
-		
+
 // 	},
 // 	__proto__: mixin,
 // }
@@ -9479,7 +9479,7 @@ let animal = new Cat({name:'Кот', speed: 15, hasTail: true})
 // console.log(b)
 
 // let  options = {
-	
+
 // 	method: 'GET',
 // 	headers:{
 // 		'Content-Type':'Application/json'
@@ -9508,4 +9508,846 @@ let animal = new Cat({name:'Кот', speed: 15, hasTail: true})
 // getUser()
 
 // console.assert(1, "Error haha")
+// let id = Symbol('ideos')
+// let user = {
+// [id]: 1223
+// }
 
+// let idd = Symbol.for('id')
+
+// let idAgain = Symbol.for('id');
+
+// console.log(id === idd)
+// console.log(idAgain === idd)
+// console.log(Symbol.keyFor(idd))
+// console.log(id.description)
+
+// let user = {
+// 	name: 'gary',
+// 	money:5000,
+// 	// [Symbol.toPrimitive](h){
+// 	// 	return h==='string'? `name: ${this.name}` : this.money
+// 	// },
+// 	toString(){
+// 		return this.name
+// 	}
+// }
+
+// let fruits = ["Яблоко", "Апельсин", "Слива"];
+
+// function Calculator(){
+// 	this.methods = {
+// 		'+': (a,b)=> a+b,
+// 		'-': (a,b)=> a-b, 
+// 	}
+
+// 	this.calculate = (str)=>{
+// 		let split = str.split(' '),
+// 			a = +split[0],
+// 			op = split[1],
+// 			b = +split[2];	
+// 		if(!this.methods[op] || !a || !b){
+// 			return NaN
+// 		}
+// 		return this.methods[op](a,b)
+// 	}
+
+// 	this.addMethod = (name, func)=>{
+// 		this.methods[name] = func;
+// 	}
+// }
+
+// let calc = new Calculator();
+
+// calc.calculate('3 + 7')
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
+
+// let users = [ vasya, petya, masha ];
+
+// let names = users.map(i=>i.name)
+// console.log(names)
+
+
+
+// let range = {
+// 	from: 1,
+// 	to: 9,
+
+// 	[Symbol.iterator](){
+
+// 		return {
+// 			from:this.from,
+// 			to: this.to,
+// 			next(){
+// 				if(this.from<=this.to){
+// 					return{
+// 						done:false,
+// 						value:this.from++
+// 					}
+// 				}else return {done:true}
+// 			}
+// 		}
+// 	}
+// }
+
+// for(let num of range){
+// 	console.log(num)
+// }
+
+// function showMenu({ title = "Menu", width = 80, height = 10 }) {
+// 	console.log( `${title} ${width} ${height}` );
+//  }
+//  let options = {
+// 	title: 'fff',
+// 	  width: 100,
+// 	  height: 200,
+// 	items: ["Cake", "Donut"],
+// 	extra: true
+//  };
+//  showMenu({}); // Menu 100 200
+
+// let company = { // тот же самый объект, сжатый для краткости
+// 	sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600 }],
+// 	development: {
+// 	  sites: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800 }],
+// 	  internals: [{name: 'Jack', salary: 1300}]
+// 	}
+//  };
+
+//  function sumSalaries(dep){
+// 	let sum = 0;
+// 	if(Array.isArray(dep)){
+// 		return dep.reduce((p,i)=>p+i.salary,0)
+// 	}else{
+
+// 	   for(let it of Object.values(dep)){
+// 			sum+=sumSalaries(it);
+
+// 		}
+// 	}
+// 	return sum
+
+//  }
+
+// let d = function f(...a) { 
+// 	let door =5;
+// 	console.log(...arguments)
+// 	return a.reduce((p,i)=>p+i)
+
+//  }
+
+// //  let ar = [3, 5, 1];
+// // let arr2 = [8, 9, 15];
+
+// // let str = 'HELLO'
+// // console.log([...str])
+// d(1,2,3,4);
+// let sum=0;
+// for (let i=0;i<4;++i){
+// console.log(sum+=i)	
+// }
+
+
+// function f() {
+// 	let value = Math.random();
+
+// 	return function() { alert(value); };
+//  }
+
+//  // три функции в массиве, каждая из них ссылается на лексическое окружение
+//  // из соответствующего вызова f()
+//  let arr = [f(), f(), f()];
+
+// function sum(a){
+// 	return function (b){
+// 		return a+b
+// 	}
+// }
+
+// let arr = [1,2,3,4,5,6,7,8];
+
+// function inBetween(a,b){
+// 	return function(x){
+// 		return x>=a&&x<=b
+// 	}
+// }
+// function inArray(arr){
+// 	return function (x){
+// 		return arr.includes(x)
+// 	}
+// }
+// let filtered = arr.filter(inBetween(3,6));
+// let filtered1 = arr.filter(inArray([1,2,10]));
+// console.log(filtered1 )
+
+// let users = [
+// 	{ name: "John", age: 20, surname: "Johnson" },
+// 	{ name: "Pete", age: 18, surname: "Peterson" },
+// 	{ name: "Ann", age: 19, surname: "Hathaway" }
+//  ];
+// console.log(users)
+//  console.log(users.sort(byf('name')))
+//  console.log(users.sort(byf('age')))
+// // sort((a,b)=>a.name-b.name)
+// function byf(pol){
+// 	return function(a,b){
+// 		return a[pol]>b[pol]?1:-1
+// 	}
+// }
+
+// function makeArmy() {
+// 	let shooters = [];
+
+
+// 	for (let i = 0;i < 10;i++) {
+// 	  let shooter = function() { // функция shooter
+// 		 alert( i ); // должна выводить порядковый номер
+// 	  };
+// 	  shooters.push(shooter);
+
+// 	}
+
+// 	return shooters;
+//  }
+
+//  let army = makeArmy();
+
+//  army[0](); // у 0-го стрелка будет номер 10
+// army[5]();
+
+// function sayHi(){
+// 	console.log('hi')
+// }
+// console.log(sayHi.length)
+
+// function mk(){
+// 	cou.count=0;
+// 	function cou(){
+// 		return ++cou.count
+// 	}
+
+// 	cou.set=(v)=>{
+// 		cou.count=v
+// 		return cou.count
+// 	}
+// 	cou.decrease=()=>--cou.count
+// 	return cou
+
+// }
+
+// function sum(a){
+// 	let summ=0
+
+// 	return function rec(b){
+// 		rec.toString=()=>{
+// 			return summ
+// 		}
+// 		summ+=b;
+// 		return rec
+// }}
+
+// let a = new Function('a','b','console.log(a+b)');
+// a(1,3)
+
+
+// let y = setTimeout(func,delay,arg,arg)
+
+// function slow(x){
+// 	console.log(`Called with ${x*10}`)
+// 	return x*10;
+// }
+
+// function cacheDecor(func){
+// 	let cache = new Map();
+// 	console.log(cache)
+// 	return function (...x){
+// 		let key = x.join();
+
+// 		if(cache.has(key)){
+// 			console.log(`if yes ${x}`)
+// 			return cache.get(key)
+// 		}
+// 			let res = func.apply(this,x)
+// 			cache.set(key,res)
+// 		return res
+// 	}
+// }
+
+
+
+// let s = cacheDecor(slow);
+// s(20)
+// s(40)
+// s(40)
+
+// let ss = cacheDecor(sum);
+// alert(ss(2)(3)(4))
+
+// let worker = {
+// 	someMethod() {
+// 	  return 2;
+// 	},
+
+// 	slow(x) {
+// 	  // здесь может быть страшно тяжёлая задача для процессора
+// 	  console.log("Called with " + x);
+// 	  return x * this.someMethod(); // (*)
+// 	}
+//  };
+
+//  console.log(worker.someMethod())
+//  console.log(worker.slow(5))
+//  worker.slow = cacheDecor(worker.slow)
+//  console.log(worker.slow(4))
+//  console.log(worker.slow(5))
+//  console.log(worker.slow(5))
+
+// function  sayHi(){
+// 	 console.log(`Hi ${this.name}`,this);
+//  }
+
+//  let user = { name: "John" };
+// let admin = { name: "Admin" };
+
+// sayHi()
+// sayHi.call(user)
+// sayHi.call(admin)
+
+
+// function say(fr){
+// 	console.log(this.name+' : '+fr)
+// }
+
+// let worker = {
+// 	slow(min,max){
+// 		return min+max
+// 	}
+// }
+
+// console.log(worker.slow(5,7))
+// worker.slow = cacheDecor(worker.slow)
+// console.log(worker.slow(5,7))
+// console.log(worker.slow(5,7))
+// console.log(worker.slow(51,17))
+// console.log(worker.slow(51,17))
+// function work(a,b){
+// 	console.log(a+b)
+// 	return a+b
+// }
+// function spy(func){
+// 	let keys = new Map()
+
+// 	function f(...x){
+// 		let r = func.apply(this,x)
+// 		keys.set(x,r);
+// 		return r
+// 	}
+// 	f.calls = keys
+// 	return f
+// }
+
+// work = spy(work);
+// work(1,2)
+// work(4,6);
+// console.log(work.calls)
+
+
+// function f(...x){
+// 	console.log(x)
+// }
+// let f1000 = delay(f, 1000);
+// let f2000 = delay(f, 2000);
+// let f5000 = delay(f, 5000);
+
+// function delay(f,ms){
+// 	return function (...args){
+// 		setTimeout(()=>f.apply(this,args),ms)
+// 	}
+// }
+// f1000(5,10,15);
+// f5000(5000)
+
+// function debounce(func, ms) {
+	
+// 		cou = 0
+// 	return function (...x) {
+
+// 		if (!cou++) {
+// 			func.apply(this, x);
+// 			setTimeout(()=>cou = 0,ms)
+// 		} else {
+// 			return
+// 		}
+// 	}
+// }
+// let f = debounce(alert, 1000)
+// f(10)
+// f(20)
+// setTimeout( () => f(3), 100); // проигнорирован (прошло только 100 мс)
+// setTimeout( () => f(4), 1100); // выполняется
+// setTimeout( () => f(5), 1500); // проигнорирован (прошло только 400 мс от последнего выз
+
+// function throttle(f,ms){
+// 	let pos = 0;
+// 	cou = 0
+// 	let timer;
+
+// 	return function(...x){
+// 		if(!cou++){
+// 			f.apply(this,x)
+// 			timer = setTimeout(()=>{
+// 				cou = 0
+// 			},ms)
+			
+// 		}else{
+// 			pos = x
+// 			clearTimeout(timer);
+// 			timer = setTimeout(()=> cou = 0,ms)
+// 		}
+// 	}
+// }
+
+// function f(a) {
+// 	console.log(a)
+//  }
+ 
+//  // f1000 передаёт вызовы f максимум раз в 1000 мс
+//  let f1000 = throttle(f, 3000);
+ 
+//  f1000(1); // показывает 1
+//  f1000(2); // (ограничение, 1000 мс ещё нет)
+//  f1000(3); // (ограничение, 1000 мс ещё нет)
+ 
+//  // когда 1000 мс истекли ...
+//  // ...выводим 3, промежуточное
+
+// function askPassword(ok, fail) {
+// 	let password = prompt("Password?", '');
+// 	if (password == "rockstar") ok();
+// 	else fail();
+//  }
+ 
+//  let user = {
+// 	name: 'Вася',
+ 
+// 	loginOk() {
+// 	  console.log(`${this.name} logged in`);
+// 	},
+ 
+// 	loginFail() {
+// 	  console.log(`${this.name} failed to log in`);
+// 	},
+ 
+//  };
+ 
+//  askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
+
+
+// function askPassword(ok, fail) {
+// 	let password = prompt("Password?", '');
+// 	if (password == "rockstar") ok();
+// 	else fail();
+//  }
+ 
+//  let user = {
+// 	name: 'John',
+ 
+// 	login(result) {
+// 	  alert( this.name + (result ? ' logged in' : ' failed to log in') );
+// 	}
+//  };
+
+//  askPassword(user.login.bind(user,true),user.login.bind(user,false)); // ?
+
+
+// let user = {
+// 	name:'john',
+// 	surname: 'smith',
+// 	get fullName(){
+// 		return `${this.name} ${this.surname}`
+// 	},
+// 	set fullName(str){
+// 		[this.name, this.surname] = str.split(' ')
+// 	}
+// }
+
+// console.log(Object.getOwnPropertyDescriptors(user))
+
+
+// let user = {
+// 	name: "John",
+// 	surname: "Smith",
+ 
+// 	set fullName(value) {
+// 	  [this.name, this.surname] = value.split(" ");
+// 	},
+ 
+// 	get fullName() {
+// 	  return `${this.name} ${this.surname}`;
+// 	}
+//  };
+ 
+//  let admin = {
+// 	__proto__: user,
+// 	isAdmin: true
+//  };
+
+// let animal = {
+// 	jumps: null
+//  };
+//  let rabbit = {
+// 	__proto__: animal,
+// 	jumps: true
+//  };
+ 
+//  alert( rabbit.jumps ); // ? (1)
+ 
+//  delete rabbit.jumps;
+ 
+//  alert( rabbit.jumps ); // ? (2)
+ 
+//  delete animal.jumps;
+ 
+//  alert( rabbit.jumps ); // ? (3)
+
+// let animal = {
+// 	eats: true
+//  };
+ 
+// function Rabbit(name){
+// 	this.name = name;
+// }
+ 
+// //  Rabbit.prototype = animal;
+ 
+//  let rabbit = new Rabbit("White Rabbit"); //  rabbit.__proto__ == animal
+ 
+//  console.log( rabbit.eats ); // true
+//  console.log( rabbit.__proto__ === Rabbit.prototype); // true
+//  console.log(Rabbit.prototype); // true
+//  console.log(rabbit)
+//  console.log(rabbit.__proto__.constructor)
+//  let dog = new rabbit.constructor('white dog')
+//  console.log(dog)
+
+
+// function Rabbit() {}
+// Rabbit.prototype = {
+//   eats: true
+// };
+
+// let rabbit = new Rabbit();
+
+// // Rabbit.prototype = {};
+// // Rabbit.prototype.eats = false;
+// // let rabbit2 = new Rabbit()
+
+
+// delete rabbit.eats;
+// console.log(rabbit.eats)
+// // console.log(rabbit2.eats)
+
+// let arr = [1,2,3]
+// console.dir(arr)
+// console.dir([1,2,3])
+
+// function f(a, b) {
+// 	alert( a + b );
+//  }
+// Function.prototype.defer = function(ms){
+	
+// 	function wr(...x){
+	
+// 		setTimeout(()=>{
+// 			this.call(this,...x)},ms)
+// 	}
+// 	return wr.bind(this)
+// }
+
+// let animal = {
+// 	eats: true
+// }
+
+// let rabbit = Object.create(animal)
+// console.log(Object.getPrototypeOf(rabbit))
+// console.log(Object.getPrototypeOf(animal))
+
+// let clone = Object.create(Object.getPrototypeOf(animal),Object.getOwnPropertyDescriptors(animal))
+// console.log(clone)
+
+// let dictionary = Object.create(null,{
+// 	toString:{
+// 		value(){
+// 			return Object.keys(this).join()
+// 		},
+// 		configurable: true,
+// 		writable: true,
+// 	}
+// });
+
+// // ваш код, который добавляет метод dictionary.toString
+
+
+// // dictionary.toString = Object.prototype.toString
+// // Object.defineProperty(dictionary,'toString',{enumerable: false})
+
+
+// // добавляем немного данных
+// dictionary.apple = "Apple";
+// dictionary.__proto__ = "test"; // здесь __proto__ -- это обычный ключ
+
+// // только apple и __proto__ выведены в цикле
+// for(let key in dictionary) {
+//   alert(key); // "apple", затем "__proto__"
+// }
+
+// // ваш метод toString в действии
+// alert(dictionary); // "apple,__proto__"
+// function ff(){}
+// class User{}
+
+// let user = new User()
+// // console.log(user.__proto__)
+// console.log(User.prototype,user.__proto__ )
+// console.log(User.prototype.__proto__ === Object.prototype)
+// console.log(ff.prototype.constructor === ff)
+// // console.log(ff.prototype === Function.prototype.constructor.ff  )
+// // console.log(ff.__proto__ === Function.prototype )
+// // console.log( Function.prototype.constructor )
+// alert(User + ff)
+
+
+// class Animal {
+// 	ddd(){}
+// 	static compare(animalA, animalB) {
+// 		return animalA.speed - animalB.speed;
+// 	 }
+// }
+// class Rabbit extends Animal {
+// 	fff(){}
+// }
+
+// // для статики
+// // console.log(Rabbit.__proto__ === Animal); // true
+// // console.log(Animal.__proto__ === Function.prototype); // true
+// // console.log(Animal.__proto__ ); // true
+// // console.log(Animal.prototype); // true
+// // console.log(Rabbit.prototype); // true
+// // console.log(Rabbit.prototype.__proto__); // true
+
+// // // для обычных методов
+// // console.log(Rabbit.prototype.__proto__ === Animal.prototype); // true
+
+// // console.log(Rabbit.compare)
+// console.log(Animal.prototype.__proto__ === Object.prototype)
+
+
+
+// class Rabbit extends Object {
+// 	constructor(name) {
+// 		super()
+// 	  this.name = name;
+// 	}
+//  }
+ 
+//  let rabbit = new Rabbit("Кроль");
+ 
+//  console.log( rabbit.hasOwnProperty('name'),rabbit.name ); // Ошибка
+
+// class CoffeeMachine {
+// 	#waterLimit = 200;
+// 	#water = 3000;
+ 
+// 	#checkWater(value) {
+// 	  if (value < 0) throw new Error("Отрицательный уровень воды");
+// 	  if (value > this.#waterLimit) throw new Error("Слишком много воды");
+// 	}
+// 	get water (){
+// 		return this.#water
+// 	}
+// 	set water (v){
+// 		this.#water = v
+// 	}
+//  }
+ 
+//  let c = new CoffeeMachine();
+ 
+ // снаружи  нет доступа к приватным методам класса
+//  coffeeMachine.#checkWater(); // Error
+//  coffeeMachine.#waterLimit = 1000; // Error
+
+// class CoffeeMachine {
+
+// 	#waterAmount = 0;
+ 
+// 	get waterAmount() {
+// 	  return this.#waterAmount;
+// 	}
+ 
+// 	set waterAmount(value) {
+// 	  if (value < 0) throw new Error("Отрицательный уровень воды");
+// 	  this.#waterAmount = value;
+// 	}
+//  }
+ 
+//  let machine = new CoffeeMachine();
+ 
+//  machine.waterAmount = 100;
+
+//  console.log(machine.waterAmount)
+
+
+
+// добавим один метод (можно более одного)
+// class PowerArray extends Array {
+// 	isEmpty() {
+// 	  return this.length === 0;
+// 	}
+
+// 	static get [Symbol.species]() {
+// 		return Array;
+// 	 }
+//  }
+ 
+//  let arr = new PowerArray(1, 2, 5, 10, 50);
+//  console.log(arr.isEmpty()); // false
+//  console.log(arr.constructor === PowerArray)
+ 
+//  let filteredArr = arr.filter(item => item >= 10);
+//  console.log(filteredArr); // 10, 50
+// //  console.log(filteredArr.isEmpty()); // false
+
+
+// let ts = Object.prototype.toString;
+
+// let arr =[],
+// str = '',
+// b = true,
+// n = null,
+// u = undefined,
+// o = {},
+// big = 10n,
+// id = Symbol('div'),
+// ttt= ts.call(b)
+// console.log(ttt === '[object Boolean]')
+// console.log(b === 'string')
+// console.log(ts.call(arr))
+// console.log(ts.call(str))
+// console.log(ts.call(n))
+// console.log(ts.call(o))
+// console.log(ts.call(big))
+// console.log(ts.call(b))
+// console.log(ts.call(u))
+// console.log(ts.call(id))
+
+
+// let eventMixin = {
+// 	//Подписаться на событие:
+// 	// menu.on('select',function(item){})
+// 	on(eventName,handler){
+// 		if(!this._eventHandlers) this._eventHandlers = {}
+// 		if(!this._eventHandlers[eventName]) this._eventHandlers[eventName] = []
+// 		this._eventHandlers[eventName].push(handler)
+// 	},
+// 	//Отменить подписку на событие
+// 	off(eventName,handler){
+// 		let handlera = this._eventHandlers && this._eventHandlers[eventName]
+// 		if(!handlera) return
+// 		for(let i=0;i<handlera.length;i++){
+// 			if(handlera[i]===handler) handlera.splice(i--,1)
+// 		}
+// 	},
+// 	//Сгенерировать событие с указанным именем и данными
+// 	trigger(eventName,...args){
+// 		if(!this._eventHandlers||!this._eventHandlers[eventName])return
+// // Вызываем обработчики	
+// 		this._eventHandlers[eventName].forEach(handler => {
+		
+// 			handler.call(this,...args)
+// 		});
+
+// 	}
+// }
+
+// class Menu{
+// 	choose(value){
+// 		this.trigger('select',value)
+// 	}
+// }
+// Object.assign(Menu.prototype,eventMixin)
+
+// let menu = new Menu();
+// //добавить обработчик который будет вызван при событии 'select'
+// menu.on('select',val=>console.log(`Вы выбрали ${val}`))
+
+// //Генерирует событие=> обработчик выше запускается и выводит значение
+
+// menu.choose('5000')
+
+// class ReadError extends Error {
+// 	constructor(message,cause){
+// 		super(message);
+// 		this.cause = cause;
+// 		this.name = this.constructor.name
+// 	}
+// }
+
+// class ValidationError extends Error{}
+// class PropertyRequiredError extends ValidationError{}
+
+// function validateUser(){
+// 	if(!user.age) throw new PropertyRequiredError('age')
+// 	if(!user.name) throw new PropertyRequiredError('name')
+// }
+
+// function readUser(json){
+// 	let user
+// 	try{
+// 		user = JSON.parse(json);
+
+// 	} catch (e){
+// 		if(e instanceof SyntaxError){
+// 			throw new ReadError('Синтаксическая ошибка', e)
+// 		}else throw e;
+// 	}
+// }
+
+// try {
+
+// 	readUser('badff');
+
+// }catch(e){
+// 	if (e instanceof ReadError){
+// 		console.log(e);
+// 		console.log('Исходная ошибка '+ e.cause)
+// 	}else throw e;
+// }
+
+// class FormatError extends SyntaxError{
+
+// }
+// let e = new FormatError('ошибка форматирования')
+// console.log(e.message)
+// console.log(e.name)
+// console.log(e.stack)
+// console.log(e instanceof FormatError)
+// console.log(e instanceof SyntaxError)
+
+// function loadScreipt (src) {
+// 	let script = document.createElement('script')
+// 	script.src = src
+// 	document.body.append(script);
+
+// }
+
+const stringTransformer = str => {
+	return str.split('').map(it=>{
+		return it.toLowerCase() === it ? it.toUpperCase() : it.toLowerCase()
+	}).join('').split(' ').reverse().join(' ')
+}
+//'HTML CSS   JS'
+console.log(stringTransformer('js   css html') === 'HTML CSS   JS')
+console.log(stringTransformer('js   css html'))

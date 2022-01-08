@@ -36,16 +36,22 @@ function subHandler(){
 	
 	displayResault(result)	
 }
-console.log(addBtn)
+// console.log(addBtn)
 addBtn.addEventListener('click', addHandler)
 subBtn.addEventListener('click', subHandler)
 })
 
-console.time('timer')
+// console.time('timer')
 
-let arr = []
-for(let i = 0;i<10000000;i++){
-	arr.push(i+i)
-}
+// let arr = []
+// for(let i = 0;i<10000000;i++){
+// 	arr.push(i+i)
+// }
 
-console.timeEnd('timer')
+// console.timeEnd('timer')
+// let r;
+// function f (){
+// 	r = function g(){
+// 		console.log('f')
+// 	}
+// }
