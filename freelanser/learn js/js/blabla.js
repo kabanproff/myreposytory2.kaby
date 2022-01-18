@@ -25,6 +25,9 @@ let newArr = raspil.map(item => {
 });
 console.log(newArr);
 
-function sayHaha(){
+export function sayHaha(){
 	console.log('XAXAXAXAXAXAXA');
+}
+export function sayHi(user){
+	return (`Hello ${user}`)
 }

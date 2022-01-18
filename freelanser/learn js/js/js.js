@@ -1,3 +1,5 @@
+// import axios from 'axios';
+
 // 'use strict';
 // ќÃβᎯ₦pŔoff
 (function (msg) {
@@ -9871,7 +9873,7 @@ console.clear();
 // f5000(5000)
 
 // function debounce(func, ms) {
-	
+
 // 		cou = 0
 // 	return function (...x) {
 
@@ -9901,7 +9903,7 @@ console.clear();
 // 			timer = setTimeout(()=>{
 // 				cou = 0
 // 			},ms)
-			
+
 // 		}else{
 // 			pos = x
 // 			clearTimeout(timer);
@@ -9913,14 +9915,14 @@ console.clear();
 // function f(a) {
 // 	console.log(a)
 //  }
- 
+
 //  // f1000 передаёт вызовы f максимум раз в 1000 мс
 //  let f1000 = throttle(f, 3000);
- 
+
 //  f1000(1); // показывает 1
 //  f1000(2); // (ограничение, 1000 мс ещё нет)
 //  f1000(3); // (ограничение, 1000 мс ещё нет)
- 
+
 //  // когда 1000 мс истекли ...
 //  // ...выводим 3, промежуточное
 
@@ -9929,20 +9931,20 @@ console.clear();
 // 	if (password == "rockstar") ok();
 // 	else fail();
 //  }
- 
+
 //  let user = {
 // 	name: 'Вася',
- 
+
 // 	loginOk() {
 // 	  console.log(`${this.name} logged in`);
 // 	},
- 
+
 // 	loginFail() {
 // 	  console.log(`${this.name} failed to log in`);
 // 	},
- 
+
 //  };
- 
+
 //  askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
 
 
@@ -9951,10 +9953,10 @@ console.clear();
 // 	if (password == "rockstar") ok();
 // 	else fail();
 //  }
- 
+
 //  let user = {
 // 	name: 'John',
- 
+
 // 	login(result) {
 // 	  alert( this.name + (result ? ' logged in' : ' failed to log in') );
 // 	}
@@ -9980,16 +9982,16 @@ console.clear();
 // let user = {
 // 	name: "John",
 // 	surname: "Smith",
- 
+
 // 	set fullName(value) {
 // 	  [this.name, this.surname] = value.split(" ");
 // 	},
- 
+
 // 	get fullName() {
 // 	  return `${this.name} ${this.surname}`;
 // 	}
 //  };
- 
+
 //  let admin = {
 // 	__proto__: user,
 // 	isAdmin: true
@@ -10002,29 +10004,29 @@ console.clear();
 // 	__proto__: animal,
 // 	jumps: true
 //  };
- 
+
 //  alert( rabbit.jumps ); // ? (1)
- 
+
 //  delete rabbit.jumps;
- 
+
 //  alert( rabbit.jumps ); // ? (2)
- 
+
 //  delete animal.jumps;
- 
+
 //  alert( rabbit.jumps ); // ? (3)
 
 // let animal = {
 // 	eats: true
 //  };
- 
+
 // function Rabbit(name){
 // 	this.name = name;
 // }
- 
+
 // //  Rabbit.prototype = animal;
- 
+
 //  let rabbit = new Rabbit("White Rabbit"); //  rabbit.__proto__ == animal
- 
+
 //  console.log( rabbit.eats ); // true
 //  console.log( rabbit.__proto__ === Rabbit.prototype); // true
 //  console.log(Rabbit.prototype); // true
@@ -10058,9 +10060,9 @@ console.clear();
 // 	alert( a + b );
 //  }
 // Function.prototype.defer = function(ms){
-	
+
 // 	function wr(...x){
-	
+
 // 		setTimeout(()=>{
 // 			this.call(this,...x)},ms)
 // 	}
@@ -10152,15 +10154,15 @@ console.clear();
 // 	  this.name = name;
 // 	}
 //  }
- 
+
 //  let rabbit = new Rabbit("Кроль");
- 
+
 //  console.log( rabbit.hasOwnProperty('name'),rabbit.name ); // Ошибка
 
 // class CoffeeMachine {
 // 	#waterLimit = 200;
 // 	#water = 3000;
- 
+
 // 	#checkWater(value) {
 // 	  if (value < 0) throw new Error("Отрицательный уровень воды");
 // 	  if (value > this.#waterLimit) throw new Error("Слишком много воды");
@@ -10172,29 +10174,29 @@ console.clear();
 // 		this.#water = v
 // 	}
 //  }
- 
+
 //  let c = new CoffeeMachine();
- 
- // снаружи  нет доступа к приватным методам класса
+
+// снаружи  нет доступа к приватным методам класса
 //  coffeeMachine.#checkWater(); // Error
 //  coffeeMachine.#waterLimit = 1000; // Error
 
 // class CoffeeMachine {
 
 // 	#waterAmount = 0;
- 
+
 // 	get waterAmount() {
 // 	  return this.#waterAmount;
 // 	}
- 
+
 // 	set waterAmount(value) {
 // 	  if (value < 0) throw new Error("Отрицательный уровень воды");
 // 	  this.#waterAmount = value;
 // 	}
 //  }
- 
+
 //  let machine = new CoffeeMachine();
- 
+
 //  machine.waterAmount = 100;
 
 //  console.log(machine.waterAmount)
@@ -10211,11 +10213,11 @@ console.clear();
 // 		return Array;
 // 	 }
 //  }
- 
+
 //  let arr = new PowerArray(1, 2, 5, 10, 50);
 //  console.log(arr.isEmpty()); // false
 //  console.log(arr.constructor === PowerArray)
- 
+
 //  let filteredArr = arr.filter(item => item >= 10);
 //  console.log(filteredArr); // 10, 50
 // //  console.log(filteredArr.isEmpty()); // false
@@ -10265,7 +10267,7 @@ console.clear();
 // 		if(!this._eventHandlers||!this._eventHandlers[eventName])return
 // // Вызываем обработчики	
 // 		this._eventHandlers[eventName].forEach(handler => {
-		
+
 // 			handler.call(this,...args)
 // 		});
 
@@ -10343,11 +10345,723 @@ console.clear();
 
 // }
 
-const stringTransformer = str => {
-	return str.split('').map(it=>{
-		return it.toLowerCase() === it ? it.toUpperCase() : it.toLowerCase()
-	}).join('').split(' ').reverse().join(' ')
-}
-//'HTML CSS   JS'
-console.log(stringTransformer('js   css html') === 'HTML CSS   JS')
-console.log(stringTransformer('js   css html'))
+// const stringTransformer = str => {
+// 	return str.split('').map(it=>{
+// 		return it.toLowerCase() === it ? it.toUpperCase() : it.toLowerCase()
+// 	}).join('').split(' ').reverse().join(' ')
+// }
+// //'HTML CSS   JS'
+// console.log(stringTransformer('js   css html') === 'HTML CSS   JS')
+// console.log(stringTransformer('js   css html'))
+
+
+// async function f() {
+
+// 	let promise = new Promise((resolve, reject) => {
+// 	  setTimeout(() => resolve("готово!"), 10000)
+// 	});
+
+// 	let result = await promise; // будет ждать, пока промис не выполнится (*)
+
+// 	console.log(result); // "готово!"
+//  }
+
+//  f();
+
+//  let v 
+//  v = 3+6
+// console.log(v)
+
+
+// async function loadJson(url){
+// 	let response =  await fetch(url)
+
+// 	if(response.status === 200)response.json()
+// 	throw new Error(response.status)
+// }
+
+// class HttpError extends Error {
+// 	constructor(response) {
+// 		super(`${response.status} for ${response.url}`);
+// 		this.name = 'HttpError';
+// 		this.response = response;
+// 	}
+// }
+
+// async function loadJson(url) {
+// 	let response = await fetch(url);
+// 	if (response.status === 200) {
+// 		return response.json();
+// 	}
+// 	throw new HttpError(response);
+
+// }
+
+// async function demoGitHubUser() {
+// 	let user;
+// 	for (; ;) {
+// 		let name = prompt('Введите логин', 'yytut');
+// 		try {
+// 			user = await loadJson(`http://api.github.com/users/${name}`);
+// 			if (user.name) {
+// 				alert(`Полное имя ${user.name}`);
+// 				break;
+// 			}
+// 		} catch (e) {
+// 			if (e instanceof HttpError && e.response.status === 404) {
+// 				alert("Такого пользователя не существует, пожалуйста, повторите ввод.");
+// 				continue
+// 			}
+// 			throw user;
+// 		}
+// 	}
+// 	return user
+// }
+
+
+// async function wait(){
+// 	await new Promise(rs=>setTimeout(rs,5000));
+// 	return 10
+// }
+// function f(){
+// 	return wait().then(i=>console.log(i))
+// }
+
+
+// function* gener(){
+// 	yield 1;
+// 	yield 2;
+// 	yield 3;
+// 	return 4;
+
+// }
+// let gen = gener()
+// console.log(gen)
+// for(i of gen)console.log(i)
+// console.log(gen)
+// console.log(gen.next())
+// console.log(gen.next())
+// console.log(gen.next())
+// console.log(gen.next())
+// console.log(gen.next())
+// console.log(gen)
+// for(i of gen)console.log(i)
+
+// let arr = [2,4,6,...gen]
+
+// let range = {
+// 	from: 1,
+// 	to: 8,
+// 	*[Symbol.iterator](){
+// 		for(let value = this.from;value<=this.to;value++){
+// 			yield value
+// 		}
+// 	}
+// }
+
+// function* generateSequence(start, end) {
+// 	for (let i = start; i <= end; i++) yield i;
+//  }
+
+//  function* generatePasswordCodes() {
+
+// 	// 0..9
+// 	yield* generateSequence(48, 57);
+
+// 	// A..Z
+// 	yield* generateSequence(65, 90);
+
+// 	// a..z
+// 	yield* generateSequence(97, 122);
+
+//  }
+
+//  for (i of generateSequence(10,20))console.log(i)
+
+// function* g(){
+// 	let r = yield '2+5=?'
+// 	console.log(r)
+// 	yield 55
+// }
+// let gg = g();
+// let q = prompt(gg.next().value,'')
+// gg.next(q);
+
+// function* gen(){
+// 	try{
+// 		let r = yield '2+5 = ?'
+// 		console.log('no wiew')
+// 	}catch(e){
+// 		console.log(e)
+// 	}
+// }
+
+// let g = gen();
+// console.log(g.next().value)
+// g.throw(new Error('xui'))
+
+// function* ps(seed){
+// 	let v = seed
+// 	while(1){
+// 		v =  v * 16807 % 2147483647
+// 		yield v
+// 	}
+// }
+
+// let generator = ps(1)
+// // console.log((generator.next().value))
+// // console.log((generator.next().value))
+
+// alert(generator.next().value); // 16807
+// alert(generator.next().value); // 282475249
+// alert(generator.next().value);
+
+// let range = {
+// 	from: 1,
+// 	to: 10,
+
+// 	async *[Symbol.asyncIterator]() {
+// 		for (let v = this.from; v <= this.to; v++){
+// 			await new Promise(r => setTimeout(r,1000));
+// 			yield v;
+// 		}
+// 	}
+// };
+
+// (async()=>{for await(let i of range)console.log(i)})()
+// (async () => {
+// 	for await (let value of range) {
+// 	  alert(value); // 1, потом 2, потом 3, потом 4, потом 5
+// 	}
+
+//  })();
+
+// let range = {
+// 	from: 1,
+// 	to: 5,
+
+// 	async *[Symbol.asyncIterator]() { // то же, что и [Symbol.asyncIterator]: async function*()
+// 	  for(let value = this.from; value <= this.to; value++) {
+
+// 		 // пауза между значениями, ожидание
+// 		 await new Promise(resolve => setTimeout(resolve, 1000));
+
+// 		 yield value;
+// 	  }
+// 	}
+//  };
+
+//  (async () => {
+
+// 	for await (let value of range) {
+// 	  console.log(value); // 1, потом 2, потом 3, потом 4, потом 5
+// 	}
+
+//  })();
+
+// (async () => {
+
+// 	let count = 0;
+
+// 	for await (const commit of fetchCommits('javascript-tutorial/en.javascript.info')) {
+
+// 	  console.log(commit.author.login);
+
+// 	  if (++count == 100) { // остановимся на 100 коммитах
+// 		 break;
+// 	  }
+// 	}
+
+//  })();
+
+// export function sayHi(user){
+// 	return (`Hello ${user}`)
+// }
+// import {sayHaha} from '.js/blabla.js'
+// let obj = {}
+// let proxy = new Proxy(obj,{})
+
+// proxy.test = 5
+// console.log(obj.test)
+// console.log(proxy.test)
+// for (k in obj)console.log(k)
+// for (k in proxy)console.log(k)
+
+// let numbers = [0,1,2]
+
+// numbers = new Proxy(numbers,{
+// 	get(target,prop){
+// 		if(prop in target){
+// 			return target[prop]
+// 		}else return 0
+// 	}
+// })
+
+// let dictionary = {
+// 	'Hello': 'Hola',
+// 	'Bye': 'Adios'
+// }
+
+// dictionary = new Proxy(dictionary,{
+// 	get(target,prop){
+// 		if(prop in target){
+// 			return target[prop]
+// 		}else return prop
+// 	}
+// })
+
+// console.log(dictionary)
+// console.log(dictionary['hi'])
+// console.log(dictionary['Bye'])
+
+// let numbers = [];
+// numbers = new Proxy(numbers,{
+// 	set(target,prop,val){
+// 		if(typeof val === 'number'){
+// 			target[prop] = val
+// 			return true
+// 		} else return false
+// 	},
+// 	get(target,prop){
+// 		if(!target[prop]) return 0
+// 		return target[prop]
+// 	},
+
+// })
+// numbers.push(5)
+// numbers.push('5')
+
+// console.log(numbers)
+
+// let user = {
+// 	name: 'Вася',
+// 	age: 30,
+// 	_password: '3456',
+// 	_food: 'apple'
+// }
+// user = new Proxy(user,{
+// 	ownKeys(target){
+// 		return Object.keys(target).filter(k => !k.startsWith('_'))
+
+
+// 	}
+// })
+
+// for (let k in user){
+// 	console.log(k)
+// }
+
+// let user = {
+// 	_name: 'Вася',
+// 	_password: '344666663dbnmn',
+// 	street(){
+// 		return 'Minsk, Landera str.'
+// 	},
+// 	family: {
+// 		father: 'Вася',
+// 		mother: 'Тома'
+// 	}
+// }
+
+// console.log(user._password)
+// console.log(user._street())
+
+// user= new Proxy(user,{
+// 	get(target,prop){
+// 		if(prop.startsWith('_')) throw new Error('Отказано в  доступе')
+// 		let val = target[prop];
+// 		return (typeof val === 'function')? val.bind(target):val
+// 	},
+// 	set(target,prop,val){
+// 		if(prop.startsWith('_')) throw new Error('Нельзя перезаписывать')
+// 		target[prop] = val
+// 		return true
+// 	},
+// 	deleteProperty(target,prop){
+// 		if(prop.startsWith('_'))throw new Error('not del')
+// 		delete target[prop]
+// 		return true
+// 	},
+// 	ownKeys(target){
+// 		return Object.keys(target).filter(k=>!k.startsWith('_'))
+// 	}
+// })
+// console.log(user.street)
+// try{
+// console.log(user._password)
+// }catch(e) {console.log(e)}
+// console.log(user.family)
+// user.name = 'Артём'
+// try{console.log(delete user._name)}
+// catch(e){console.log(e)}
+// console.log(user)
+
+
+// let r = {
+// 	s: 1,
+// 	e: 11,
+// }
+
+// // for (k in r)console.log(k)
+// console.log(11 in r)
+
+// r = new Proxy(r,{
+// 	has(target,prop){
+// 		return prop >= target.s && prop <= target.e
+// 	}
+// })
+// console.log(1 in r)
+// console.log(5 in r)
+
+// function delay(f,ms){
+// 	return function(){
+// 		setTimeout(()=> f.apply(this),ms)
+// 	}
+// }
+
+// function sa(dd){
+// 	console.log('sahi')
+// }
+// // console.log(sa.length)
+// // sa = delay(sa,3000);
+// // console.log(sa.length)
+
+// function delay(f, ms){
+// 	return new Proxy(f,{
+// 		apply(target,thisArg,args){
+// 			setTimeout(()=> target.apply(thisArg,args),ms)
+// 		}
+// 	})
+// }
+// console.log(sa.length)
+// sa = delay(sa, 3000)
+// console.log(sa.length)
+// console.log(sa())
+
+// let user = {};
+// Reflect.set(user,'name','Kaban');
+// console.log(user)
+
+// user = new Proxy(user,{
+// 	get(target,prop,receiver){
+// 		console.log(` Get ${target[prop]}`)
+// 		return Reflect.get(target,prop,receiver)
+// 	},
+// 	set(target,prop,value,receiver){
+// 		console.log(`set значение ${target[prop]} изменяется на ${value}`);
+// 		return Reflect.set(target,prop,value,receiver)
+// 	}
+// })
+
+// let name = user.name;
+// user.name = 'Lambda'
+// console.log(user)
+
+// let obj = {
+// 	data: 'ddd'
+// }
+// let {proxy,revoke} = Proxy.revocable(obj,{})
+
+// let revokes = new WeakMap();
+
+// revokes.set(proxy,revoke)
+// console.log(revokes)
+
+// r = revokes.get(proxy);
+// console.log(r)
+// let user = {
+// 	name: "John"
+//  };
+
+// function wrap(target){
+// 	return new Proxy(target,{
+// 		get(target,prop,receiver){
+// 			if(!target[prop]){
+// 				throw new Error('Свойства нет')
+// 			}
+// 			if(prop in target) {
+// 				return Reflect.get(target,prop,receiver)
+// 			}
+// 		}
+// 	})
+// }
+
+// user = wrap(user)
+// alert(user.name); // John
+// alert(user.age); 
+
+// let arr = [1, 2, 3, 4];
+
+// arr = new Proxy(arr, {
+// 	get(target, prop, receiver) {
+
+// 		if (prop < 0) {
+// 			prop = +prop + target.length	
+// 		}
+// 		return Reflect.get(target, prop, receiver)
+// 	}
+// })
+// console.log(arr[1])
+
+// function makeObservable(target) {
+// 	return new Proxy(target,{
+// 		set(target,prop,val,receiver){
+// 			console.log(`SET ${prop}=${val}`)
+
+
+// 			return true
+
+// 		// },
+// 		// apply(target,thisArg,args){
+// 		// 	return Reflect.apply(target,args)
+// 		// }
+// 		observe(hand){
+// 			return hand.apply(target)
+// 		},
+// 		get(target,prop,receiver){
+// 			if(!(prop in target)){
+// 				return prop
+// 				.split('_')
+// 				.map(i=>target[i])
+// 				.join(' ')
+// 			}
+// 			return target[prop]
+// 		}
+
+// 	})
+//  }
+// let handlers = Symbol('handlers')
+// function makeObservable(target){
+// 	 target[handlers] = []
+// 	 target.observe = function (hand){
+// 		 this[handlers].push(hand)
+// 	 }
+// 	 return new Proxy(target,{
+// 		 set(target,prop,value,receiver){
+// 			 console.log(target)
+// 			 console.log(prop)
+// 			 console.log(value)
+// 			 console.log(receiver)
+// 			 let success = Reflect.set(target,prop,value,receiver)
+// 			 console.log(success)
+// 			 if(target[handlers].length != 0){
+// 				 target[handlers].forEach(e => {
+// 					 e.apply(target,[prop,value])
+// 				 });
+// 			 }
+
+// 			 return success
+// 		 }
+// 	 })
+// }
+
+//  let user = {
+// 	 name: 'kola',
+// 	 age: 34,
+// 	 job: 'frontend'
+//  };
+//  user = makeObservable(user);
+// //  user.n(()=>console.log('hi'))
+//   user.observe((key, value) => {
+// 	alert(`SET ${key}=${value}`);
+//  });
+//  console.log(user)
+//  user.name = "John"; // выводит: SET name=John
+//  console.log(user)
+//  console.log(user.name)
+
+//  let handlers = Symbol('handlers');
+//  function makeObservable(target){
+// 	 target[handlers] = [];
+
+// 	 target.observe = function(handler){
+// 		 target[handlers].push(handler);
+// 	 };
+
+// 	 return new Proxy(target,{
+// 		 set(target,prop,value,receiver)
+// 	 })
+//  }
+
+// function isValidWalk(walk) {
+// 	let countNS = 0,
+// 		countEW = 0;
+
+// 	walk.forEach(i => {
+// 		switch (i) {
+// 			case 'n': {
+// 				++countNS;
+// 				break;
+// 			}
+// 			case 's': {
+// 				--countNS;
+// 				break;
+// 			}
+// 			case 'e': {
+// 				++countEW;
+// 				break;
+// 			}
+// 			case 'w': {
+// 				--countEW;
+// 				break;
+// 			}
+// 		}
+// 	})
+
+// 	return walk.length === 10 && !countNS && !countEW ? true : false;
+// }
+
+
+// let str = 'console.log("hi")';
+// eval(str)
+
+// let val = prompt('Введите значение','')
+// confirm(eval(val))
+
+// function curry(f){
+// 	return function (a){
+// 		return function(b){
+// 			return f(a,b);
+// 		}
+// 	}
+// }
+
+// function sum(a,b){
+// 	return a+b
+// }
+
+// let curried = curry(sum);
+// curried(1)(2)
+// // curried(1,2)
+
+// function sum(a,b){
+// 	return a+b;
+
+// }
+// let curriedS = _.curry(sum);
+
+
+// function curry(func){
+// 	return function curried(...arg){
+// 		if(arg.length>=func.length){
+// 			return func.apply(this,arg)
+// 		} else{
+// 			return function (...arg2){
+// 				return curried.apply(this,arg.concat(arg2))
+// 			}
+// 		}
+// 	}
+// }
+
+// function sum(a,b,c){
+// 	return a+b+c
+// }
+
+// let c = curry(sum);
+// console.log(c(1,2,3))
+// console.log(c(1)(2,3))
+// console.log(c(1)(2)(3))
+// let a = parseInt('110',2)
+// console.log(a)
+// let b = a.toString(3)
+// console.log(b)
+// console.log(parseInt('1000',2))
+// console.log(6..toString(3))
+
+// let a = Array(1,2)
+// console.log(a)
+// console.log()
+// let b = Boolean(true)
+// let s = String('d')
+// console.log(s)
+// console.log(b)
+// console.log('ё'>'я')
+
+// let aa = document.body.childNodes
+// let ab = [...aa]
+// console.log(aa)
+
+// let div = document.body.firstElementChild
+// let d = document.body
+// console.log(div)
+// let ul = document.body.children[1]
+// console.log(ul)
+// let li = document.body.children[1].lastElementChild
+// console.log(li)
+
+
+// try{
+// let prom = axios.get('http://api.github.com/users/kabanproff')
+
+// 	console.log(prom)
+// 	prom.then((data)=>console.log(data.data.name))
+// }
+// catch(e){
+// 	console.log(e)
+// }
+
+// async function getUser(){
+// 	return  await fetch('http://api.github.com/users/kabanproff')
+// }
+
+// // console.log(getUser())
+// getUser().then((rs)=>rs.json()).then(user=>console.log(user))
+
+// const pr = ()=>{
+// 	return new Promise(rs=>{
+// 		console.log(1);
+// 		rs(2)
+// 		console.log(3)
+// 	})
+// }
+
+// pr().then(r=>console.log(r));
+// console.log(4)
+
+// const array = [
+// 	{a:10, text: "Twitter"},
+// 	{b:20, text: "Facebook"},
+// 	{c:30, text: "Instagram"}
+// 	];
+
+// 	console.log(array.reduce((pr,it)=>{
+// 		return pr + it['text'].length
+// 	},0))
+
+// function aa() {
+// 	let c = 0
+// 	return function(){
+// 		return c + 5
+// 	}
+// }
+// let d = aa()
+// // !5 = 5 * 4 * 3 * 2 * 1
+// function factorial(n){
+// 	return n === 1 ? n : factorial(n - 1) * n
+// }
+
+
+// String.prototype.getLength = function(){
+// 	return this.length
+// }
+// let str = 'LOOP';
+// console.log(str.getLength())
+
+// let arr = [ 5,6,7,83] 
+
+// let [a,,,...d] = arr
+// const array = [
+// 	{a:10, text: "Twitter"},
+// 	{b:20, text: "Facebook"},
+// 	{c:30, text: "Instagram"}
+// 	];
+
+// 	console.log(array.reduce((pr,it) =>{
+// 		for(let k of Object.values(it)){
+// 			console.log(k)
+// 			if(typeof k === 'number'){
+// 			return pr * k
+// 			}
+// 		}
+
+// 	},1))
